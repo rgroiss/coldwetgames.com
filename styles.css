@@ -1,11 +1,12 @@
 :root {
-  color-scheme: light;
-  --paper: #ece9df;
-  --ink: #20211f;
-  --muted: #62635e;
-  --rule: #a8a79f;
-  --turquoise: #168a8d;
-  --violet: #6c5bc6;
+  color-scheme: dark;
+  --paper: #171917;
+  --ink: #f1efe7;
+  --muted: #afb0a8;
+  --rule: #4d504b;
+  --turquoise: #2e9fa5;
+  --violet: #9584e8;
+  --violet-light: #ded8ff;
 }
 
 * {
@@ -84,19 +85,19 @@ body {
 
 .hero::before {
   top: 50%;
-  left: clamp(56%, 66vw, 72%);
+  left: clamp(58%, 66vw, 72%);
   width: min(54vw, 620px);
   aspect-ratio: 1;
-  border: 1px solid var(--turquoise);
-  transform: translateY(-50%);
+  background: var(--turquoise);
+  transform: translate(-50%, -50%);
 }
 
 .hero::after {
   top: 50%;
-  left: clamp(56%, 66vw, 72%);
+  left: clamp(64%, 76vw, 82%);
   width: min(34vw, 390px);
   aspect-ratio: 1;
-  background: var(--turquoise);
+  background: var(--violet);
   transform: translate(-50%, -50%);
 }
 
@@ -121,7 +122,7 @@ h1 span {
 
 .title-accent {
   margin-left: clamp(0.1rem, 8.5vw, 8rem);
-  color: var(--violet);
+  color: var(--violet-light);
 }
 
 .details {
