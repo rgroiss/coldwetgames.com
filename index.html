@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111718" />
+    <meta
+      name="description"
+      content="Cold and Wet Games is an independent game studio from Austria, founded by Roman Groiss."
+    />
+    <title>Cold and Wet Games</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card" aria-labelledby="studio-name">
+      <p class="eyebrow">Independent game studio · Austria</p>
+
+      <h1 id="studio-name">
+        <span>Cold and Wet</span>
+        <span>Games</span>
+      </h1>
+
+      <p class="intro">
+        Cold and Wet Games is an independent studio founded by game developer
+        and artist Roman Groiss.
+      </p>
+
+      <div class="status" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>This website is currently a work in progress.</span>
+      </div>
+
+      <footer>
+        <span>© <span id="year">2026</span> Cold and Wet Games</span>
+        <a href="mailto:contact@coldwetgames.com">contact@coldwetgames.com</a>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
