@@ -26,14 +26,6 @@
       });
     }
 
-    document.querySelectorAll("[data-project-card]").forEach((card) => {
-      card.addEventListener("pointermove", (event) => {
-        const bounds = card.getBoundingClientRect();
-        card.style.setProperty("--pointer-x", `${event.clientX - bounds.left}px`);
-        card.style.setProperty("--pointer-y", `${event.clientY - bounds.top}px`);
-      });
-    });
-
     const revealItems = document.querySelectorAll("[data-reveal]");
     if ("IntersectionObserver" in window) {
       const revealObserver = new IntersectionObserver(

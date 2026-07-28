@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#101413" />
     <meta name="description" content="" />
     <title></title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/cold-and-wet-mountain-clean.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="localization.js" defer></script>
     <script src="interactions.js" defer></script>
@@ -21,11 +21,11 @@
         >
           <img
             class="brand-lockup__mark"
-            src="assets/cold-and-wet-mountain.png"
+            src="assets/cold-and-wet-mountain-clean.png"
             alt=""
             data-i18n-attr="alt:brand.logoAlt"
           />
-          <span class="brand-lockup__text" data-i18n="brand.mark"></span>
+          <span class="brand-lockup__text" data-i18n="brand.headerName"></span>
         </a>
 
         <nav class="site-nav" data-i18n-attr="aria-label:navigation.label">
@@ -37,12 +37,19 @@
 
       <main>
         <section class="hero" aria-labelledby="studio-name">
+          <h1 class="visually-hidden" id="studio-name" data-i18n="hero.heading"></h1>
+
+          <figure class="hero-lockup" data-logo-motion data-reveal>
+            <img
+              class="hero-lockup__image"
+              src="assets/cold-and-wet-mountain-clean.png"
+              alt=""
+              data-i18n-attr="alt:brand.logoAlt"
+            />
+          </figure>
+
           <div class="hero__copy" data-reveal>
             <p class="eyebrow" data-i18n="hero.eyebrow"></p>
-            <h1 id="studio-name">
-              <span class="hero__title-main" data-i18n="hero.titleMain"></span>
-              <span class="hero__title-accent" data-i18n="hero.titleAccent"></span>
-            </h1>
             <p class="hero__intro" data-i18n="hero.intro"></p>
 
             <div class="status-notice" role="status">
@@ -50,17 +57,6 @@
               <span data-i18n="hero.status"></span>
             </div>
           </div>
-
-          <figure class="hero-mark" data-logo-motion data-reveal>
-            <div class="hero-mark__frame" aria-hidden="true"></div>
-            <img
-              class="hero-mark__image"
-              src="assets/cold-and-wet-mountain.png"
-              alt=""
-              data-i18n-attr="alt:brand.logoAlt"
-            />
-            <figcaption class="hero-mark__caption" data-i18n="hero.logoCaption"></figcaption>
-          </figure>
         </section>
 
         <section class="section work" id="work" aria-labelledby="work-title" data-reveal>
@@ -71,45 +67,75 @@
           </div>
 
           <ol class="project-list">
-            <li class="project-card project-card--ueberdose" data-project-card>
-              <a
-                class="project-card__link"
-                href="https://camel-eon.itch.io/uberdose"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n-attr="aria-label:projects.ueberdose.ariaLabel"
-              >
-                <span class="project-card__title" data-i18n="projects.ueberdose.title"></span>
-                <span class="project-card__meta" data-i18n="projects.ueberdose.platform"></span>
-                <span class="project-card__action" data-i18n="projects.ueberdose.action"></span>
-                <span class="project-card__arrow" aria-hidden="true"></span>
-              </a>
+            <li class="project project--ysiitu" data-project-card>
+              <article class="project__body">
+                <div
+                  class="project__media project__media--pending"
+                  role="img"
+                  data-i18n-attr="aria-label:projects.yourSuffering.artAlt"
+                >
+                  <span data-i18n="projects.yourSuffering.artStatus"></span>
+                </div>
+                <div class="project__content">
+                  <p class="project__meta" data-i18n="projects.yourSuffering.platform"></p>
+                  <h3 data-i18n="projects.yourSuffering.title"></h3>
+                  <p class="project__action project__action--static" data-i18n="projects.yourSuffering.action"></p>
+                </div>
+              </article>
             </li>
 
-            <li class="project-card project-card--heavy-wake" data-project-card>
-              <a
-                class="project-card__link"
-                href="https://store.steampowered.com/app/4235660/Heavy_Wake/"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"
-              >
-                <span class="project-card__title" data-i18n="projects.heavyWake.title"></span>
-                <span class="project-card__meta" data-i18n="projects.heavyWake.platform"></span>
-                <span class="project-card__action" data-i18n="projects.heavyWake.action"></span>
-                <span class="project-card__arrow" aria-hidden="true"></span>
-              </a>
+            <li class="project project--heavy-wake" data-project-card>
+              <article class="project__body">
+                <figure class="project__media">
+                  <img
+                    src="assets/projects/heavy-wake.jpg"
+                    alt=""
+                    data-i18n-attr="alt:projects.heavyWake.artAlt"
+                  />
+                </figure>
+                <div class="project__content">
+                  <p class="project__meta" data-i18n="projects.heavyWake.platform"></p>
+                  <h3 data-i18n="projects.heavyWake.title"></h3>
+                  <a
+                    class="project__action"
+                    href="https://store.steampowered.com/app/4235660/Heavy_Wake/"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-i18n="projects.heavyWake.action"
+                    data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"
+                  ></a>
+                </div>
+                <div class="steam-widget">
+                  <iframe
+                    src="https://store.steampowered.com/widget/4235660/"
+                    loading="lazy"
+                    data-i18n-attr="title:projects.heavyWake.widgetTitle"
+                  ></iframe>
+                </div>
+              </article>
             </li>
 
-            <li class="project-card project-card--forthcoming" data-project-card>
-              <article
-                class="project-card__link project-card__link--static"
-                data-i18n-attr="aria-label:projects.yourSuffering.ariaLabel"
-              >
-                <span class="project-card__title" data-i18n="projects.yourSuffering.title"></span>
-                <span class="project-card__meta" data-i18n="projects.yourSuffering.platform"></span>
-                <span class="project-card__action" data-i18n="projects.yourSuffering.action"></span>
-                <span class="project-card__arrow" aria-hidden="true"></span>
+            <li class="project project--ueberdose" data-project-card>
+              <article class="project__body">
+                <figure class="project__media">
+                  <img
+                    src="assets/projects/uberdose.jpg"
+                    alt=""
+                    data-i18n-attr="alt:projects.ueberdose.artAlt"
+                  />
+                </figure>
+                <div class="project__content">
+                  <p class="project__meta" data-i18n="projects.ueberdose.platform"></p>
+                  <h3 data-i18n="projects.ueberdose.title"></h3>
+                  <a
+                    class="project__action"
+                    href="https://camel-eon.itch.io/uberdose"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-i18n="projects.ueberdose.action"
+                    data-i18n-attr="aria-label:projects.ueberdose.ariaLabel"
+                  ></a>
+                </div>
               </article>
             </li>
           </ol>
@@ -128,7 +154,6 @@
           </div>
 
           <div class="portrait-placeholder" data-i18n-attr="aria-label:about.portraitAriaLabel">
-            <div class="portrait-placeholder__mountain" aria-hidden="true"></div>
             <p data-i18n="about.portraitLabel"></p>
             <span data-i18n="about.portraitCaption"></span>
           </div>

@@ -7,7 +7,7 @@
           "Cold and Wet Games is an independent game studio from Austria, founded by Roman Groiss.",
       },
       brand: {
-        mark: "CW//G",
+        headerName: "Cold and Wet Studios",
         homeLabel: "Cold and Wet Games home",
         logoAlt: "Cold and Wet Games mountain logo",
       },
@@ -18,13 +18,11 @@
         contact: "Contact",
       },
       hero: {
-        eyebrow: "Independent game studio · Austria",
-        titleMain: "Cold and Wet",
-        titleAccent: "Games",
+        eyebrow: "Independent game studio \u00b7 Austria",
+        heading: "Cold and Wet Games",
         intro:
           "Cold and Wet Games is an independent studio founded by game developer and artist Roman Groiss.",
         status: "This website is currently a work in progress.",
-        logoCaption: "An edge above the waterline.",
       },
       work: {
         eyebrow: "Selected games",
@@ -33,22 +31,27 @@
       },
       projects: {
         ueberdose: {
-          title: "Ueberdose",
+          title: "UBER//DOSE",
           platform: "itch.io",
-          action: "Visit project",
-          ariaLabel: "Visit Ueberdose on itch.io",
+          action: "Visit on itch.io",
+          ariaLabel: "Visit UBER//DOSE on itch.io",
+          artAlt: "UBER//DOSE official artwork",
         },
         heavyWake: {
           title: "Heavy Wake",
           platform: "Steam",
-          action: "Visit project",
+          action: "Visit on Steam",
           ariaLabel: "Visit Heavy Wake on Steam",
+          artAlt: "Heavy Wake official artwork",
+          widgetTitle: "Heavy Wake on Steam",
         },
         yourSuffering: {
           title: "Your Suffering Is Important to Us",
           platform: "In development",
           action: "Details forthcoming",
           ariaLabel: "Your Suffering Is Important to Us, details forthcoming",
+          artAlt: "Artwork placeholder for Your Suffering Is Important to Us",
+          artStatus: "Artwork forthcoming",
         },
       },
       about: {
@@ -62,7 +65,7 @@
         portraitCaption: "A place for a future photo.",
       },
       footer: {
-        copyright: "© {year} Cold and Wet Games",
+        copyright: "\u00a9 {year} Cold and Wet Games",
         email: "contact@coldwetgames.com",
       },
     },
