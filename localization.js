@@ -2,14 +2,14 @@
   const locales = {
     en: {
       meta: {
-        title: "Cold and Wet Games",
+        title: "Cold and Wet Studios",
         description:
-          "Cold and Wet Games is an independent game studio from Austria, founded by Roman Groiss.",
+          "Cold and Wet Studios is an independent game studio from Austria, founded by Roman Groiss.",
       },
       brand: {
         headerName: "Cold and Wet Studios",
-        homeLabel: "Cold and Wet Games home",
-        logoAlt: "Cold and Wet Games mountain logo",
+        homeLabel: "Cold and Wet Studios home",
+        logoAlt: "Cold and Wet Studios mountain logo",
       },
       navigation: {
         label: "Primary navigation",
@@ -19,9 +19,10 @@
       },
       hero: {
         eyebrow: "Independent game studio \u00b7 Austria",
-        heading: "Cold and Wet Games",
+        titleMain: "Cold and Wet",
+        titleAccent: "Studios",
         intro:
-          "Cold and Wet Games is an independent studio founded by game developer and artist Roman Groiss.",
+          "Cold and Wet Studios is an independent studio founded by game developer and artist Roman Groiss.",
         status: "This website is currently a work in progress.",
       },
       work: {
@@ -65,7 +66,7 @@
         portraitCaption: "A place for a future photo.",
       },
       footer: {
-        copyright: "\u00a9 {year} Cold and Wet Games",
+        copyright: "\u00a9 {year} Cold and Wet Studios",
         email: "contact@coldwetgames.com",
       },
     },

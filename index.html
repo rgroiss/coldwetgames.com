@@ -37,7 +37,19 @@
 
       <main>
         <section class="hero" aria-labelledby="studio-name">
-          <h1 class="visually-hidden" id="studio-name" data-i18n="hero.heading"></h1>
+          <div class="hero__copy" data-reveal>
+            <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+            <h1 id="studio-name">
+              <span class="hero__title-main" data-i18n="hero.titleMain"></span>
+              <span class="hero__title-accent" data-i18n="hero.titleAccent"></span>
+            </h1>
+            <p class="hero__intro" data-i18n="hero.intro"></p>
+
+            <div class="status-notice" role="status">
+              <span class="status-notice__dot" aria-hidden="true"></span>
+              <span data-i18n="hero.status"></span>
+            </div>
+          </div>
 
           <figure class="hero-lockup" data-logo-motion data-reveal>
             <img
@@ -47,16 +59,6 @@
               data-i18n-attr="alt:brand.logoAlt"
             />
           </figure>
-
-          <div class="hero__copy" data-reveal>
-            <p class="eyebrow" data-i18n="hero.eyebrow"></p>
-            <p class="hero__intro" data-i18n="hero.intro"></p>
-
-            <div class="status-notice" role="status">
-              <span class="status-notice__dot" aria-hidden="true"></span>
-              <span data-i18n="hero.status"></span>
-            </div>
-          </div>
         </section>
 
         <section class="section work" id="work" aria-labelledby="work-title" data-reveal>

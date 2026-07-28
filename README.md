@@ -1,4 +1,4 @@
-# Cold and Wet Games website
+# Cold and Wet Studios website
 
 Temporary studio website for [coldwetgames.com](https://coldwetgames.com), hosted with GitHub Pages.
 
