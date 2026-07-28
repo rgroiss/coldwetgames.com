@@ -4,12 +4,14 @@
       meta: {
         title: "Cold and Wet Studios",
         description:
-          "Cold and Wet Studios is an independent game studio from Austria, founded by Roman Groiss.",
+          "Cold and Wet Studios is an independent game-development and visual-design studio from Austria, founded by Roman Groiss.",
+      },
+      accessibility: {
+        skipToWork: "Skip to selected work",
       },
       brand: {
         headerName: "Cold and Wet Studios",
         homeLabel: "Cold and Wet Studios home",
-        logoAlt: "Cold and Wet Studios mountain logo",
       },
       navigation: {
         label: "Primary navigation",
@@ -18,68 +20,94 @@
         contact: "Contact",
       },
       hero: {
-        eyebrow: "Independent game studio \u00b7 Austria",
+        eyebrow: "Independent game studio / Austria",
         titleMain: "Cold and Wet",
         titleAccent: "Studios",
-        intro:
-          "Cold and Wet Studios is an independent studio founded by game developer and artist Roman Groiss.",
-        status: "This website is currently a work in progress.",
+        intro: "Games, development, and visual design by Roman Groiss.",
+        statusLabel: "Work in progress",
+        status: "This website and its project archive are still being built.",
+        markCaption: "Studio mark / {year}",
       },
       work: {
-        eyebrow: "Selected games",
-        title: "A few worlds so far.",
-        intro: "More project details and roles will arrive here soon.",
+        eyebrow: "Selected work",
+        title: "Selected games, newest first.",
+        intro: "Studio releases and earlier work by Roman Groiss.",
       },
       projects: {
-        ueberdose: {
-          title: "UBER//DOSE",
-          platform: "itch.io",
-          action: "Visit on itch.io",
-          ariaLabel: "Visit UBER//DOSE on itch.io",
-          artAlt: "UBER//DOSE official artwork",
-        },
-        heavyWake: {
-          title: "Heavy Wake",
-          platform: "Steam",
-          action: "Visit on Steam",
-          ariaLabel: "Visit Heavy Wake on Steam",
-          artAlt: "Heavy Wake official artwork",
-          widgetTitle: "Heavy Wake on Steam",
+        labels: {
+          state: "State",
+          destination: "Find it",
+          role: "Role",
+          context: "Context",
         },
         yourSuffering: {
+          number: "01",
+          capsuleTitle: "YSIITU",
+          mediaState: "In development",
+          kicker: "Cold and Wet Studios",
           title: "Your Suffering Is Important to Us",
-          platform: "In development",
-          action: "Details forthcoming",
-          ariaLabel: "Your Suffering Is Important to Us, details forthcoming",
-          artAlt: "Artwork placeholder for Your Suffering Is Important to Us",
-          artStatus: "Artwork forthcoming",
+          description:
+            "A new Cold and Wet Studios project currently in development.",
+          state: "In development",
+          context: "Studio project",
+          action: "More information forthcoming",
+          artAlt:
+            "Development slate for Your Suffering Is Important to Us",
+        },
+        heavyWake: {
+          number: "02",
+          kicker: "Cold and Wet Studios / 2026",
+          title: "Heavy Wake",
+          description:
+            "A focused 30\u201360 minute dark-fantasy deckbuilding RPG set on a cursed island.",
+          state: "Released 6 July 2026",
+          destination: "Steam",
+          action: "Open on Steam",
+          ariaLabel: "Open Heavy Wake on Steam",
+          artAlt: "Heavy Wake official game artwork",
+        },
+        uberDose: {
+          number: "03",
+          kicker: "Pre-studio student work",
+          title: "UBER//DOSE",
+          description:
+            "A student project created before Cold and Wet Studios, with Roman Groiss as main developer.",
+          state: "Released",
+          destination: "itch.io",
+          role: "Main developer",
+          context: "Student project",
+          action: "Open on itch.io",
+          ariaLabel: "Open UBER//DOSE on itch.io",
+          artAlt: "UBER//DOSE official game artwork",
         },
       },
       about: {
         eyebrow: "About",
         title: "Roman Groiss",
-        intro:
-          "Game developer and artist. A more complete bio is on its way.",
+        intro: "Game developer and founder of Cold and Wet Studios.",
         contactAction: "Get in touch",
-        portraitAriaLabel: "Reserved space for a future portrait of Roman Groiss",
-        portraitLabel: "Portrait forthcoming",
-        portraitCaption: "A place for a future photo.",
+        portraitAriaLabel:
+          "Space reserved for a future portrait of Roman Groiss",
+        initials: "RG",
+        portraitLabel: "Portrait reserved",
+        portraitCaption: "Future photograph",
       },
       footer: {
-        copyright: "\u00a9 {year} Cold and Wet Studios",
+        copyright: "\u00A9 {year} Cold and Wet Studios",
         email: "contact@coldwetgames.com",
       },
     },
   };
 
-  const locale = locales[document.documentElement.lang] ? document.documentElement.lang : "en";
+  const requestedLocale = document.documentElement.lang;
+  const locale = locales[requestedLocale] ? requestedLocale : "en";
   const messages = locales[locale];
 
   const messageFor = (path) =>
     path.split(".").reduce((value, key) => value?.[key], messages) ?? "";
 
   const format = (message) =>
-    String(message).replace("{year}", String(new Date().getFullYear()));
+    String(message).replaceAll("{year}", String(new Date().getFullYear()));
 
   document.documentElement.lang = locale;
   document.title = format(messageFor("meta.title"));
