@@ -51,6 +51,13 @@
           state: "In development",
           context: "Studio project",
           action: "More information forthcoming",
+          steamState: "Coming soon on Steam",
+          destination: "Steam",
+          steamAction: "Open on Steam",
+          steamAriaLabel:
+            "Open Your Suffering Is Important to Us on Steam",
+          steamArtAlt:
+            "Your Suffering Is Important to Us official Steam artwork",
           artAlt:
             "Development slate for Your Suffering Is Important to Us",
         },
@@ -86,11 +93,7 @@
         title: "Roman Groiss",
         intro: "Game developer and founder of Cold and Wet Studios.",
         contactAction: "Get in touch",
-        portraitAriaLabel:
-          "Space reserved for a future portrait of Roman Groiss",
-        initials: "RG",
-        portraitLabel: "Portrait reserved",
-        portraitCaption: "Future photograph",
+        portraitAlt: "Portrait of Roman Groiss smiling against a grey background",
       },
       footer: {
         copyright: "\u00A9 {year} Cold and Wet Studios",

@@ -39,7 +39,7 @@ The site is a working field index for a game developer and studio. The interface
 - **Intro:** roughly 8 columns for the title and 4 for statement/mark.
 - **Catalogue:** each desktop record uses four compact fields: project number, 460:215 capsule, title/description, and facts/destination.
 - **Record rhythm:** all three games should be understandable within roughly one desktop viewport. Records remain unboxed and are separated by deliberate spacing rather than ornamental lines.
-- **About:** 7 columns copy and 5 columns portrait reservation.
+- **About:** 7 columns copy and 5 columns portrait photography.
 
 ## Breakpoints
 
@@ -68,8 +68,9 @@ The site is a working field index for a game developer and studio. The interface
 - Every project owns a small capsule using the official Heavy Wake Steam header's 460:215 proportion.
 - Heavy Wake uses its official 460 × 215 Steam artwork at or below native size and links directly to Steam.
 - UBER//DOSE uses the supplied title artwork with `object-fit: contain` so its lettering remains legible.
-- YSIITU receives a compact typographic development capsule; never use the studio logo as a stand-in.
-- Lazy-load project images.
+- YSIITU uses a compact typographic development capsule until its scheduled Steam-publication check confirms both public app data and a customer-facing store page. It then switches to the locally mirrored official Steam header and link.
+- Roman's supplied portrait uses a responsive 4:5 crop with a restrained 8% scale-in; the source photograph remains compositionally intact.
+- Lazy-load project images and the portrait.
 
 ## Icon and link rules
 

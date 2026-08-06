@@ -9,6 +9,9 @@ const read = (path) => readFileSync(resolve(repositoryRoot, path), "utf8");
 const html = read("index.html");
 const localization = read("localization.js");
 const styles = read("styles.css");
+const steamProject = read("steam-project.js");
+const steamSync = read("scripts/sync-steam-project.mjs");
+const steamStatus = JSON.parse(read("assets/steam/ysiitu.json"));
 const errors = [];
 
 const localeStart = localization.indexOf("const locales =");
@@ -65,7 +68,10 @@ if (directText) {
   errors.push(`Found visible HTML text outside localization: "${directText}"`);
 }
 
-const localReferences = [...html.matchAll(/(?:href|src)="([^"]+)"/g)]
+const localReferences = [
+  ...html.matchAll(/(?:href|src)="([^"]+)"/g),
+  ...html.matchAll(/data-steam-status="([^"]+)"/g),
+]
   .map(([, reference]) => reference)
   .filter(
     (reference) =>
@@ -100,6 +106,8 @@ const replacementArtifacts = /(?:Â|Ã|â€|ï¿½)/;
 [
   ["index.html", html],
   ["localization.js", localization],
+  ["steam-project.js", steamProject],
+  ["scripts/sync-steam-project.mjs", steamSync],
   ["styles.css", styles],
 ].forEach(([path, contents]) => {
   if (replacementArtifacts.test(contents)) {
@@ -117,6 +125,14 @@ if (braceDifference !== 0) {
 
 if (messageFor("projects.uberDose.title") !== "UBER//DOSE") {
   errors.push("The UBER//DOSE title is not using its exact official spelling.");
+}
+
+if (
+  steamStatus.appId !== 5017960 ||
+  steamStatus.storeUrl !==
+    "https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/"
+) {
+  errors.push("The YSIITU Steam publication configuration is incorrect.");
 }
 
 if (errors.length > 0) {

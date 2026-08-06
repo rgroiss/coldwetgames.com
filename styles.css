@@ -77,6 +77,10 @@ ol {
   color: var(--ink);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 :focus-visible {
   outline: 0.14rem solid var(--turquoise);
   outline-offset: 0.35rem;
@@ -173,7 +177,6 @@ ol {
 .text-link,
 .project-capsule--slate strong,
 .project-capsule--slate span,
-.portrait-reservation figcaption strong,
 .site-footer {
   font-family: var(--font-mono);
 }
@@ -560,49 +563,21 @@ a.project-capsule:focus-visible img {
   line-height: 1.65;
 }
 
-.portrait-reservation {
+.portrait {
   position: relative;
-  display: flex;
   aspect-ratio: 4 / 5;
   min-height: 28rem;
-  align-items: flex-end;
   overflow: hidden;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
   background: var(--ink-soft);
 }
 
-.portrait-reservation__initials {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: var(--paper);
-  font-family: var(--font-serif);
-  font-size: clamp(10rem, 20vw, 20rem);
-  font-style: italic;
-  letter-spacing: -0.12em;
-  line-height: 1;
-  opacity: 0.055;
-  translate: -53% -54%;
-}
-
-.portrait-reservation figcaption {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 0.55rem;
-}
-
-.portrait-reservation figcaption strong {
-  color: var(--turquoise);
-  font-size: 0.68rem;
-  letter-spacing: 0.13em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.portrait-reservation figcaption span {
-  color: var(--muted);
-  font-size: 0.9rem;
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 47%;
+  scale: 1.08;
+  transform-origin: 50% 46%;
 }
 
 .site-footer {
@@ -741,7 +716,7 @@ a.project-capsule:focus-visible img {
     padding-bottom: 0;
   }
 
-  .portrait-reservation {
+  .portrait {
     width: min(100%, 30rem);
     min-height: 0;
     justify-self: end;
