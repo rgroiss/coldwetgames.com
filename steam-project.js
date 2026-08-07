@@ -55,6 +55,7 @@
       };
 
       image.addEventListener("load", revealAfterImageLoad, { once: true });
+      image.loading = "eager";
       image.src = image.dataset.steamImage;
 
       if (image.complete) {
