@@ -1,6 +1,8 @@
 {
   "appId": 5017960,
-  "published": false,
+  "published": true,
   "storeUrl": "https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/",
-  "imagePath": "assets/projects/ysiitu-steam-header.jpg"
+  "imagePath": "assets/projects/ysiitu-steam-header.jpg",
+  "detectedAt": "2026-08-07T00:37:11.479Z",
+  "steamName": "Your Suffering Is Important to Us"
 }
