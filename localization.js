@@ -47,15 +47,15 @@
           kicker: "Cold and Wet Studios",
           title: "Your Suffering Is Important to Us",
           description:
-            "A new Cold and Wet Studios project currently in development.",
+            "Run a corporate office in Hell. Manage imployees, reject petty sinners, and automate absurd punishments as you climb the corporate ladder in this comedic incremental management game.",
           state: "In development",
           context: "Studio project",
           action: "More information forthcoming",
           steamState: "Coming soon on Steam",
           destination: "Steam",
-          steamAction: "Open on Steam",
+          steamAction: "Wishlist on Steam",
           steamAriaLabel:
-            "Open Your Suffering Is Important to Us on Steam",
+            "Wishlist Your Suffering Is Important to Us on Steam",
           steamArtAlt:
             "Your Suffering Is Important to Us official Steam artwork",
           artAlt:
