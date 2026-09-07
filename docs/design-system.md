@@ -68,7 +68,7 @@ The site is a working field index for a game developer and studio. The interface
 - Every project owns a small capsule using the official Heavy Wake Steam header's 460:215 proportion.
 - Heavy Wake uses its official 460 × 215 Steam artwork at or below native size and links directly to Steam.
 - UBER//DOSE uses the supplied title artwork with `object-fit: contain` so its lettering remains legible.
-- YSIITU uses a compact typographic development capsule until its scheduled Steam-publication check confirms both public app data and a customer-facing store page. It then switches to the locally mirrored official Steam header and link.
+- YSIITU uses a locally mirrored official Steam header and links directly to its public Steam page. The image URL carries a content version so artwork updates bypass stale browser and CDN caches.
 - Roman's supplied portrait uses a responsive 4:5 crop with a restrained 8% scale-in; the source photograph remains compositionally intact.
 - Lazy-load project images and the portrait.
 

@@ -15,7 +15,8 @@ const steamStatus = JSON.parse(read("assets/steam/ysiitu.json"));
 const errors = [];
 
 const localeStart = localization.indexOf("const locales =");
-const localeEnd = localization.indexOf("\n\n  const requestedLocale");
+const localeEndMatch = /\r?\n\r?\n  const requestedLocale/.exec(localization);
+const localeEnd = localeEndMatch?.index ?? -1;
 
 if (localeStart === -1 || localeEnd === -1) {
   errors.push("Could not locate the locale dictionary in localization.js.");
