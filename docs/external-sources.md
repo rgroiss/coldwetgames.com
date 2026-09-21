@@ -28,3 +28,11 @@ Official font source repositories: [Barlow Condensed](https://github.com/google/
 All runtime assets are served locally. No external template, component demo, stock photograph, invented game screenshot or generated game art is incorporated. The gallery layout and 3D exhibit are original code.
 
 The older design-research documents remain historical research, not the current implementation specification.
+
+## Texture pass, 2026-09-21
+
+- **YSIITU lava:** `lava.mjs` ports the studio's own `Assets/_Hellgame/Art/Shaders/HellLavaBackground.hlsl` from the local Your Suffering Is Important To Us Unity project. The inspected source was at project commit `c1ec59cd`; the menu material supplies scale 3.2, speed 0.0247, warp 0.56 and softness 0.46. The website preserves the diagonal flow, five coupled folds and 28.6-second orange/red/purple cycle, with a brighter palette and stronger embers for the gallery. No Balatro game assets or third-party shader package were downloaded. The Unity project was read only.
+- **Static lava:** `assets/textures/lava-still.png` is generated from the same fold equations and website palette at time 10. It is always available in CSS, including with JavaScript disabled, on mobile and after graphics failures.
+- **Print grain and engraved lines:** `assets/textures/print-grain.png` and `contours.svg` are original deterministic procedural artwork created for this site. Generation code is in `scripts/generate-textures.mjs`; Node's standard library is the only requirement. CSS adds fine hatch/scan lines to selected surfaces.
+
+The texture pass adds no external assets, dependencies, paid licences or services. These assets are studio material, not assets redistributed under an assumed third-party licence. Existing dependency licences above are unchanged.

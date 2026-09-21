@@ -16,11 +16,19 @@ An expressive studio portfolio with Your Suffering Is Important to Us in the spo
 
 1. Compact navigation and a persistent motion preference control.
 2. Oversized studio typography, existing introduction, and a YSIITU exhibit. The wishlist action appears in the first desktop viewport.
-3. Newest-first game gallery: red YSIITU feature, violet Heavy Wake forest illustration, and dark neon UBER//DOSE composition. Artwork remains paired with each game's description, facts and action.
+3. Newest-first game gallery: flowing red/ember YSIITU feature, violet Heavy Wake forest illustration, and dark neon UBER//DOSE composition. Artwork remains paired with each game's description, facts and action.
 4. Violet about section with the original photograph and existing biography. The site-in-progress notice is retained here.
 5. Large contact link, email and copyright.
 
 The studio name remains a single accessible heading. Text embedded in original game artwork is not used as a substitute for HTML project titles.
+
+## Texture and material
+
+- The YSIITU exhibit floats above an irregular lava field instead of a smooth violet sphere. The larger project panel uses the same effect across its background, with a dark red veil beneath the copy. The old flat red circle is removed.
+- Port the game's own five-fold lava algorithm; preserve its slow internal evolution and orange/red/violet ember cycle. Website colours are brighter than the gameplay background. Do not replace it with unrelated stock lava imagery.
+- Fine deterministic grain gives the charcoal and violet panels a print finish. Etched wave lines connect the hero and UBER//DOSE; subtle scan lines belong only to the neon section. The about panel uses fine contour rings behind the portrait.
+- Keep textures behind text, never over official artwork. Green controls and asterisks use a fine printed hatch. Texture contrast must stay subordinate to reading and focus indicators.
+- All texture files are local, with a reproducible standard-library Node generator. No runtime SVG filters, texture libraries or new external assets are required.
 
 ## Motion
 
@@ -33,6 +41,7 @@ The studio name remains a single accessible heading. Text embedded in original g
 - Reduced-motion preferences override the saved setting and disable the toggle. No scene is loaded in this state.
 - Rendering stops while offscreen or when the document is hidden. Cap pixel ratio at 1.5; avoid post-processing and large models.
 - Context loss restores static artwork immediately. Context restoration resumes the scene. Failed imports and texture loads leave the static artwork intact.
+- Lava imports independently from the Three.js exhibit and GSAP. Two decorative WebGL fields render at a maximum of 24 fps and 768 × 480 pixels each, without multiplying device pixel ratio. Each pauses independently offscreen and while the tab is hidden. Mobile/coarse-pointer devices and initial reduced-motion states use a committed lava still with no lava renderer. Toggling motion off freezes already-loaded fields; context loss immediately reveals the CSS still.
 
 ## Responsive and accessible behaviour
 

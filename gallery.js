@@ -10,6 +10,9 @@
   let generation = 0;
   let sceneUnavailable = false;
   let sceneLoading = false;
+  let lavaFields;
+  let lavaLoading = false;
+  let lavaUnavailable = false;
 
   try { userPaused = localStorage.getItem('coldwet-motion') === 'off'; } catch { /* Storage is optional. */ }
 
@@ -61,7 +64,7 @@
 
     sceneLoading = true;
     try {
-      const { createExhibit } = await import('./scene.mjs');
+      const { createExhibit } = await import('./scene.mjs?v=textures-1');
       if (currentGeneration !== generation) return;
       const nextExhibit = await createExhibit(stage);
       if (currentGeneration !== generation) {
@@ -83,6 +86,26 @@
     }
   }
 
+  async function updateLava(enabled) {
+    if (!desktop.matches) {
+      lavaFields?.dispose();
+      lavaFields = undefined;
+      return;
+    }
+    if (lavaFields) { lavaFields.setEnabled(enabled); return; }
+    if (!enabled || lavaLoading || lavaUnavailable) return;
+    lavaLoading = true;
+    try {
+      const { createLavaFields } = await import('./lava.mjs?v=textures-1');
+      if (!desktop.matches || !motionEnabled()) return;
+      lavaFields = createLavaFields();
+      lavaFields.setEnabled(motionEnabled());
+    } catch {
+      // The CSS background contains a committed still of the same lava field.
+      lavaUnavailable = true;
+    } finally { lavaLoading = false; }
+  }
+
   function applyMotion() {
     const enabled = motionEnabled();
     root.dataset.motion = enabled ? 'on' : 'off';
@@ -91,8 +114,9 @@
     toggle.setAttribute('aria-pressed', String(enabled));
     toggle.querySelector('[data-motion-on]').hidden = !enabled;
     toggle.querySelector('[data-motion-off]').hidden = enabled;
-    animatePage(enabled);
+    try { animatePage(enabled); } catch { /* Other enhancements remain independent. */ }
     void updateExhibit(enabled);
+    void updateLava(enabled);
   }
 
   toggle.addEventListener('click', () => {

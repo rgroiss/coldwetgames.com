@@ -35,3 +35,17 @@ Every scenario retained all three project headings, all seven storefront links, 
 ## Delivery
 
 Local review used the no-cache server on port 8001. Desktop and mobile screenshots are stored in .preview. The redesign was reviewed locally on codex/experimental-game-gallery before the studio owner approved publication.
+
+## Texture iteration — 2026-09-21
+
+Reviewed locally on `codex/textured-gallery`; the studio owner approved this texture iteration for publication on 2026-09-21.
+
+- Validator passes: 67 localised keys, 32 local references, 77 HTML classes, including decorative canvas semantics and PNG fallback signatures. Syntax checks pass for the updated controller/scene, new lava renderer and texture generator. Whitespace checks pass. The localisation dictionary and every existing content binding and destination are unchanged.
+- Inspected the hero, YSIITU lava feature, Heavy Wake, neon project and portrait textures. Responsive checks at 320, 390, 768, 1280 and 1440 CSS pixels showed no horizontal overflow or empty text. All eight content images loaded. The wishlist button remains in the first 1280 × 800 desktop viewport.
+- Rechecked 640 × 400 CSS-pixel reflow as the 200%-zoom equivalent; native embedded-browser zoom remains unavailable. Mobile uses the static texture and HTML exhibit, without a running lava renderer.
+- Verified the motion switch freezes both lava fields and the artwork; the saved off preference survives reload. Offscreen fields stop independently. A simulated document-hidden event in the ignored harness stops both lava fields.
+- Tested reduced motion, unavailable WebGL, lava shader compilation failure, lava context loss and restoration, and missing GSAP/ScrollTrigger. All retained three project headings, seven storefront links, no empty localisations and no overflow. Shader failure and lava context loss leave the separate 3D artwork operational. Restoring the lava context resumes rendering.
+- Increased the weakest red backdrop veil to 33% opacity. A conservative calculation using each ember palette endpoint, maximum ember weighting, brighter pool colour, maximum shader dither and white grain bounds gives at least 5.07:1 for the YSIITU paragraph colour. The left copy area and bottom metadata have additional darkening.
+- Screenshots and the scenario results are in ignored `.preview/textures-desktop.png`, `.preview/textures-mobile.png`, `.preview/textures-ysiitu.png` and `.preview/texture-qa-results.json`.
+
+No Unity files, unrelated `README.txt`, external storefront URLs, factual copy, deployment settings or dependency versions were changed.

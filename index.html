@@ -9,11 +9,11 @@
   <link rel="icon" href="assets/cold-and-wet-mountain-clean.png" type="image/png" />
   <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=gallery-1" />
+  <link rel="stylesheet" href="styles.css?v=textures-1" />
   <script src="localization.js?v=gallery-1" defer></script>
   <script src="assets/vendor/gsap/gsap.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
-  <script src="gallery.js?v=gallery-1" defer></script>
+  <script src="gallery.js?v=textures-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#work" data-i18n="accessibility.skipToWork"></a>
@@ -47,6 +47,7 @@
         <div class="hero__exhibit">
           <div class="exhibit-label"><span data-i18n="hero.featured"></span><span data-i18n="projects.yourSuffering.number"></span></div>
           <div class="art-stage" data-art-stage>
+            <div class="lava-field lava-field--hero" data-lava-field aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
             <div class="art-stage__orbit" aria-hidden="true"></div>
             <div class="art-stage__fallback"><div class="art-stage__frame"><img src="assets/projects/ysiitu-steam-header-b8c07ae3.jpg" alt="" width="460" height="215" fetchpriority="high" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></div></div>
             <canvas class="art-stage__canvas" aria-hidden="true"></canvas>
@@ -65,6 +66,7 @@
         <ol class="project-list">
           <li>
             <article class="project project--hell" aria-labelledby="project-title-ysiitu">
+              <div class="lava-field lava-field--project" data-lava-field aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
               <div class="project__topline"><span class="project__number" data-i18n="projects.yourSuffering.number"></span><span data-i18n="projects.yourSuffering.kicker"></span><span class="project__badge" data-i18n="projects.yourSuffering.steamState"></span></div>
               <div class="hell-layout">
                 <div class="project__copy" data-reveal>

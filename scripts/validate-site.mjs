@@ -11,6 +11,7 @@ const localization = read("localization.js");
 const styles = read("styles.css");
 const gallery = read("gallery.js");
 const scene = read("scene.mjs");
+const lava = read("lava.mjs");
 const steamProject = read("steam-project.js");
 const steamSync = read("scripts/sync-steam-project.mjs");
 const steamStatus = JSON.parse(read("assets/steam/ysiitu.json"));
@@ -117,6 +118,7 @@ const replacementArtifacts = /(?:Â|Ã|â€|ï¿½)/;
   ["styles.css", styles],
   ["gallery.js", gallery],
   ["scene.mjs", scene],
+  ["lava.mjs", lava],
 ].forEach(([path, contents]) => {
   if (replacementArtifacts.test(contents)) {
     errors.push(`Possible text-encoding artifact in ${path}.`);
@@ -159,6 +161,15 @@ for (const key of ["motion.label", "motion.on", "motion.off", "motion.hint", "he
 }
 if (!html.includes('<canvas class="art-stage__canvas" aria-hidden="true"')) {
   errors.push("Decorative canvas must be excluded from the accessibility tree.");
+}
+if ([...html.matchAll(/<canvas\b([^>]*)>/g)].some(([, attributes]) => !attributes.includes('aria-hidden="true"'))) {
+  errors.push("All decorative canvases must be hidden from assistive technology.");
+}
+for (const asset of ["lava-still.png", "print-grain.png"]) {
+  const file = resolve(repositoryRoot, "assets/textures", asset);
+  if (!existsSync(file)) { errors.push(`Missing static texture fallback: ${asset}`); continue; }
+  const data = readFileSync(file);
+  if (data.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") errors.push(`Invalid PNG texture: ${asset}`);
 }
 for (const asset of [
   "assets/vendor/three/three.core.min.js", "assets/vendor/three/LICENSE",

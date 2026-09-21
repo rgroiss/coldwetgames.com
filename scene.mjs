@@ -2,7 +2,7 @@ import * as THREE from './assets/vendor/three/three.module.min.js';
 
 // A decorative exhibit. All meaningful text, images and actions stay in the HTML.
 export async function createExhibit(stage) {
-  const canvas = stage.querySelector('canvas');
+  const canvas = stage.querySelector('.art-stage__canvas');
   const hint = stage.querySelector('[data-drag-hint]');
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
