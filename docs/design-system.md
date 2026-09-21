@@ -35,7 +35,7 @@ The studio name remains a single accessible heading. Text embedded in original g
 - GSAP handles a short opening movement and one-time section entrances. Elements remain visible in base CSS.
 - Heavy Wake's background has a bounded scroll-linked depth effect on fine-pointer desktops.
 - Native scrolling and normal anchors remain intact.
-- Three.js renders one framed artwork panel with reflective edges, lime trim, small hardware details, a slow float and pointer-responsive lighting.
+- Three.js renders one framed artwork panel with reflective edges, small hardware details, a slow float and pointer-responsive lighting.
 - Mouse drag rotates the panel within a bounded range. The canvas is decorative and not a keyboard destination. All meaningful actions remain adjacent HTML links.
 - The localised motion toggle pauses GSAP effects, rendering, hover transitions and smooth scrolling. The preference survives reloads when localStorage is available.
 - Reduced-motion preferences override the saved setting and disable the toggle. No scene is loaded in this state.

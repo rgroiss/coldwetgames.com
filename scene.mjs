@@ -29,7 +29,6 @@ export async function createExhibit(stage) {
   const shellMaterial = new THREE.MeshStandardMaterial({ color: 0x30223e, metalness: .65, roughness: .32 });
   const rimMaterial = new THREE.MeshStandardMaterial({ color: 0xc8b5e3, metalness: .8, roughness: .24 });
   const darkMaterial = new THREE.MeshStandardMaterial({ color: 0x171019, metalness: .35, roughness: .45 });
-  const limeMaterial = new THREE.MeshBasicMaterial({ color: 0xd2ff5a, toneMapped: false });
 
   function box(width, height, depth, material, z = 0) {
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), material);
@@ -47,8 +46,6 @@ export async function createExhibit(stage) {
   artwork.position.set(0, .035, .12);
   display.add(artwork);
 
-  const edge = box(5.28, .028, .016, limeMaterial, .12);
-  edge.position.y = -1.32;
   for (const x of [-2.69, 2.69]) {
     for (const y of [-1.33, 1.33]) {
       const screw = new THREE.Mesh(new THREE.CircleGeometry(.035, 12), rimMaterial);

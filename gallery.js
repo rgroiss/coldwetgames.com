@@ -64,7 +64,7 @@
 
     sceneLoading = true;
     try {
-      const { createExhibit } = await import('./scene.mjs?v=textures-1');
+      const { createExhibit } = await import('./scene.mjs?v=textures-2');
       if (currentGeneration !== generation) return;
       const nextExhibit = await createExhibit(stage);
       if (currentGeneration !== generation) {
