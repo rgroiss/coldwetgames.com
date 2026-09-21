@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Mountain mark | User-provided, Cold and Wet Studios / Roman Groiss | Original transparent PNG in header and studio note |
 | Roman Groiss portrait | User-provided, Roman Groiss | Existing JPEG; CSS monochrome treatment and responsive crop |
-| YSIITU official header | [Studio Steam listing](https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/) | Existing content-versioned 460 × 215 header, unchanged; HTML image and 3D texture |
+| YSIITU official header | [Studio Steam listing](https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/) | Official 460 × 215 header, refreshed 2026-09-21; content-versioned HTML image and 3D texture |
 | Heavy Wake environment | User-provided, Cold and Wet Studios | Existing forest artwork used as a large project background |
 | Heavy Wake official header | [Studio Steam listing](https://store.steampowered.com/app/4235660/Heavy_Wake/) | Existing 460 × 215 capsule, unchanged |
 | UBER//DOSE artwork | User-provided student-project material | Existing JPEG, unchanged; exact artwork credit remains unrecorded |
@@ -36,3 +36,7 @@ The older design-research documents remain historical research, not the current 
 - **Print grain and engraved lines:** `assets/textures/print-grain.png` and `contours.svg` are original deterministic procedural artwork created for this site. Generation code is in `scripts/generate-textures.mjs`; Node's standard library is the only requirement. CSS adds fine hatch/scan lines to selected surfaces.
 
 The texture pass adds no external assets, dependencies, paid licences or services. These assets are studio material, not assets redistributed under an assumed third-party licence. Existing dependency licences above are unchanged.
+
+## Steam capsule refresh, 2026-09-21
+
+Downloaded the current `header_image` returned by Steam's public app-details API for app 5017960: [official image](https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5017960/f545cd3588af0e745367ecffd2b5555e03906435/header.jpg?t=1790026793). Stored unchanged as `assets/projects/ysiitu-steam-header-a04dc0e0.jpg` (SHA-256 `a04dc0e0fdf943c7e37cb7effd929c07c1376d0222e5c4dcff9aa6d93bcd05ce`). Both HTML placements and the 3D texture use this image. The previous hashed file remains available for visitors with cached older HTML.
