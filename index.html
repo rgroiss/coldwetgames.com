@@ -1,211 +1,130 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0c0e" />
+  <meta name="theme-color" content="#111113" />
   <meta name="description" content="" />
   <title></title>
   <link rel="icon" href="assets/cold-and-wet-mountain-clean.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="localization.js" defer></script>
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=gallery-1" />
+  <script src="localization.js?v=gallery-1" defer></script>
+  <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="gallery.js?v=gallery-1" defer></script>
 </head>
-
 <body>
   <a class="skip-link" href="#work" data-i18n="accessibility.skipToWork"></a>
-
-  <div class="site-frame" id="top">
+  <div id="top" class="site-frame">
     <header class="site-header">
       <a class="wordmark" href="#top" data-i18n-attr="aria-label:brand.homeLabel">
+        <img src="assets/cold-and-wet-mountain-clean.png" alt="" width="763" height="596" />
         <span data-i18n="brand.headerName"></span>
       </a>
-
       <nav class="site-nav" data-i18n-attr="aria-label:navigation.label">
         <a href="#work" data-i18n="navigation.work"></a>
         <a href="#about" data-i18n="navigation.about"></a>
         <a href="#contact" data-i18n="navigation.contact"></a>
       </nav>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-i18n-attr="aria-label:motion.label,title:motion.hint" hidden>
+        <span class="motion-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span data-i18n="motion.label"></span>
+        <span data-motion-on data-i18n="motion.on" hidden></span>
+        <span data-motion-off data-i18n="motion.off"></span>
+      </button>
     </header>
 
     <main>
-      <section class="masthead" aria-labelledby="studio-name">
-        <div class="masthead__title">
-          <p class="eyebrow" data-i18n="hero.eyebrow"></p>
-          <h1 id="studio-name">
-            <span class="masthead__title-main" data-i18n="hero.titleMain"></span>
-            <span class="masthead__title-accent" data-i18n="hero.titleAccent"></span>
-          </h1>
+      <section class="hero" aria-labelledby="studio-name">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow"></span></p>
+          <h1 id="studio-name" class="hero__title"><span data-i18n="hero.titleMain"></span> <span class="hero__title-accent" data-i18n="hero.titleAccent"></span></h1>
+          <div class="hero__intro"><span class="asterisk" aria-hidden="true"></span><p data-i18n="hero.intro"></p></div>
+          <a class="hero__explore" href="#work"><span data-i18n="hero.explore"></span><span class="arrow arrow--down" aria-hidden="true"></span></a>
         </div>
-
-        <div class="masthead__aside">
-          <figure class="studio-mark">
-            <img src="assets/cold-and-wet-mountain-clean.png" alt="" />
-            <figcaption data-i18n="hero.markCaption"></figcaption>
-          </figure>
-
-          <div class="masthead__statement">
-            <p data-i18n="hero.intro"></p>
-            <p class="status-note">
-              <span class="status-note__symbol" aria-hidden="true"></span>
-              <span>
-                <strong data-i18n="hero.statusLabel"></strong>
-                <span data-i18n="hero.status"></span>
-              </span>
-            </p>
+        <div class="hero__exhibit">
+          <div class="exhibit-label"><span data-i18n="hero.featured"></span><span data-i18n="projects.yourSuffering.number"></span></div>
+          <div class="art-stage" data-art-stage>
+            <div class="art-stage__orbit" aria-hidden="true"></div>
+            <div class="art-stage__fallback"><div class="art-stage__frame"><img src="assets/projects/ysiitu-steam-header-b8c07ae3.jpg" alt="" width="460" height="215" fetchpriority="high" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></div></div>
+            <canvas class="art-stage__canvas" aria-hidden="true"></canvas>
+            <span class="art-stage__hint" data-drag-hint data-i18n="hero.drag" hidden></span>
+          </div>
+          <div class="hero__project">
+            <div><p class="eyebrow" data-i18n="projects.yourSuffering.steamState"></p><p class="hero__project-title" data-i18n="projects.yourSuffering.title"></p></div>
+            <a class="button button--lime" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><span data-i18n="projects.yourSuffering.steamAction"></span><span class="arrow" aria-hidden="true"></span></a>
           </div>
         </div>
+        <div class="hero__bottom"><span data-i18n="hero.markCaption"></span><span class="hero__bottom-line" aria-hidden="true"></span><span data-i18n="hero.scroll"></span><span class="arrow arrow--down" aria-hidden="true"></span></div>
       </section>
 
       <section class="work-section" id="work" aria-labelledby="work-title">
-        <header class="work-heading">
-          <p class="eyebrow" data-i18n="work.eyebrow"></p>
-          <h2 id="work-title" data-i18n="work.title"></h2>
-          <p data-i18n="work.intro"></p>
-        </header>
-
-        <div class="catalogue">
-          <ol class="catalogue__records">
-            <li class="catalogue-record">
-              <article aria-labelledby="project-title-ysiitu">
-                <p class="catalogue-record__number" data-i18n="projects.yourSuffering.number"></p>
-
-                <a class="project-capsule"
-                  href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card"
-                  target="_blank" rel="noreferrer"
-                  data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel">
-                  <img src="assets/projects/ysiitu-steam-header-b8c07ae3.jpg" alt="" loading="lazy" decoding="async"
-                    data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" />
-                </a>
-
-                <div class="catalogue-record__body">
-                  <p class="catalogue-record__kicker" data-i18n="projects.yourSuffering.kicker"></p>
+        <header class="work-heading" data-reveal><div><p class="eyebrow" data-i18n="work.eyebrow"></p><h2 id="work-title" data-i18n="work.title"></h2></div><p data-i18n="work.intro"></p></header>
+        <ol class="project-list">
+          <li>
+            <article class="project project--hell" aria-labelledby="project-title-ysiitu">
+              <div class="project__topline"><span class="project__number" data-i18n="projects.yourSuffering.number"></span><span data-i18n="projects.yourSuffering.kicker"></span><span class="project__badge" data-i18n="projects.yourSuffering.steamState"></span></div>
+              <div class="hell-layout">
+                <div class="project__copy" data-reveal>
                   <h3 id="project-title-ysiitu" data-i18n="projects.yourSuffering.title"></h3>
-                  <p class="catalogue-record__description" data-i18n="projects.yourSuffering.description"></p>
+                  <p class="project__description" data-i18n="projects.yourSuffering.description"></p>
+                  <a class="button button--paper" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><span data-i18n="projects.yourSuffering.steamAction"></span><span class="arrow" aria-hidden="true"></span></a>
                 </div>
-
-                <div class="catalogue-record__meta">
-                  <dl class="project-facts">
-                    <div>
-                      <dt data-i18n="projects.labels.state"></dt>
-                      <dd data-i18n="projects.yourSuffering.steamState"></dd>
-                    </div>
-                    <div>
-                      <dt data-i18n="projects.labels.context"></dt>
-                      <dd data-i18n="projects.yourSuffering.context"></dd>
-                    </div>
-                    <div>
-                      <dt data-i18n="projects.labels.destination"></dt>
-                      <dd data-i18n="projects.yourSuffering.destination"></dd>
-                    </div>
-                  </dl>
-
-                  <a class="project-action"
-                    href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card"
-                    target="_blank" rel="noreferrer"
-                    data-i18n="projects.yourSuffering.steamAction"
-                    data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"></a>
+                <div class="hell-art" data-reveal>
+                  <div class="hell-art__type" aria-hidden="true" data-i18n="projects.yourSuffering.capsuleTitle"></div>
+                  <a class="art-link hell-art__image" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><img src="assets/projects/ysiitu-steam-header-b8c07ae3.jpg" alt="" width="460" height="215" loading="lazy" decoding="async" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></a>
+                  <span class="hell-art__stamp" data-i18n="projects.yourSuffering.destination"></span>
                 </div>
-              </article>
-            </li>
-
-            <li class="catalogue-record">
-              <article aria-labelledby="project-title-heavy-wake">
-                <p class="catalogue-record__number" data-i18n="projects.heavyWake.number"></p>
-
-                <a class="project-capsule" href="https://store.steampowered.com/app/4235660/Heavy_Wake/" target="_blank"
-                  rel="noreferrer" data-i18n-attr="aria-label:projects.heavyWake.ariaLabel">
-                  <img src="assets/projects/heavy-wake-steam-header.jpg" alt="" loading="lazy" decoding="async"
-                    data-i18n-attr="alt:projects.heavyWake.artAlt" />
-                </a>
-
-                <div class="catalogue-record__body">
-                  <p class="catalogue-record__kicker" data-i18n="projects.heavyWake.kicker"></p>
-                  <h3 id="project-title-heavy-wake" data-i18n="projects.heavyWake.title"></h3>
-                  <p class="catalogue-record__description" data-i18n="projects.heavyWake.description"></p>
-                </div>
-
-                <div class="catalogue-record__meta">
-                  <dl class="project-facts">
-                    <div>
-                      <dt data-i18n="projects.labels.state"></dt>
-                      <dd data-i18n="projects.heavyWake.state"></dd>
-                    </div>
-                    <div>
-                      <dt data-i18n="projects.labels.destination"></dt>
-                      <dd data-i18n="projects.heavyWake.destination"></dd>
-                    </div>
-                  </dl>
-
-                  <a class="project-action" href="https://store.steampowered.com/app/4235660/Heavy_Wake/"
-                    target="_blank" rel="noreferrer" data-i18n="projects.heavyWake.action"
-                    data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"></a>
-                </div>
-              </article>
-            </li>
-
-            <li class="catalogue-record">
-              <article aria-labelledby="project-title-uberdose">
-                <p class="catalogue-record__number" data-i18n="projects.uberDose.number"></p>
-
-                <a class="project-capsule project-capsule--contain" href="https://camel-eon.itch.io/uberdose"
-                  target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.uberDose.ariaLabel">
-                  <img src="assets/projects/uberdose.jpg" alt="" loading="lazy" decoding="async"
-                    data-i18n-attr="alt:projects.uberDose.artAlt" />
-                </a>
-
-                <div class="catalogue-record__body">
-                  <p class="catalogue-record__kicker" data-i18n="projects.uberDose.kicker"></p>
+              </div>
+              <dl class="project-facts"><div><dt data-i18n="projects.labels.state"></dt><dd data-i18n="projects.yourSuffering.steamState"></dd></div><div><dt data-i18n="projects.labels.context"></dt><dd data-i18n="projects.yourSuffering.context"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.yourSuffering.destination"></dd></div></dl>
+            </article>
+          </li>
+          <li>
+            <article class="project project--wake" aria-labelledby="project-title-heavy-wake">
+              <div class="project__topline"><span class="project__number" data-i18n="projects.heavyWake.number"></span><span data-i18n="projects.heavyWake.kicker"></span><span class="project__badge" data-i18n="projects.heavyWake.state"></span></div>
+              <div class="wake-art">
+                <img class="wake-art__landscape" src="assets/projects/heavy-wake.jpg" alt="" width="1438" height="810" loading="lazy" decoding="async" />
+                <h3 id="project-title-heavy-wake" data-i18n="projects.heavyWake.title" data-reveal></h3>
+                <a class="art-link wake-art__capsule" href="https://store.steampowered.com/app/4235660/Heavy_Wake/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"><img src="assets/projects/heavy-wake-steam-header.jpg" alt="" width="460" height="215" loading="lazy" decoding="async" data-i18n-attr="alt:projects.heavyWake.artAlt" /></a>
+              </div>
+              <div class="wake-details" data-reveal>
+                <p class="project__description" data-i18n="projects.heavyWake.description"></p>
+                <dl class="project-facts"><div><dt data-i18n="projects.labels.state"></dt><dd data-i18n="projects.heavyWake.state"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.heavyWake.destination"></dd></div></dl>
+                <a class="button button--violet" href="https://store.steampowered.com/app/4235660/Heavy_Wake/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"><span data-i18n="projects.heavyWake.action"></span><span class="arrow" aria-hidden="true"></span></a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="project project--dose" aria-labelledby="project-title-uberdose">
+              <div class="project__topline"><span class="project__number" data-i18n="projects.uberDose.number"></span><span data-i18n="projects.uberDose.kicker"></span><span class="project__badge" data-i18n="projects.uberDose.destination"></span></div>
+              <div class="dose-layout">
+                <a class="art-link dose-art" href="https://camel-eon.itch.io/uberdose" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.uberDose.ariaLabel" data-reveal><img src="assets/projects/uberdose.jpg" alt="" width="840" height="351" loading="lazy" decoding="async" data-i18n-attr="alt:projects.uberDose.artAlt" /></a>
+                <div class="project__copy" data-reveal>
                   <h3 id="project-title-uberdose" data-i18n="projects.uberDose.title"></h3>
-                  <p class="catalogue-record__description" data-i18n="projects.uberDose.description"></p>
+                  <p class="project__description" data-i18n="projects.uberDose.description"></p>
+                  <a class="button button--outline" href="https://camel-eon.itch.io/uberdose" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.uberDose.ariaLabel"><span data-i18n="projects.uberDose.action"></span><span class="arrow" aria-hidden="true"></span></a>
                 </div>
-
-                <div class="catalogue-record__meta">
-                  <dl class="project-facts">
-                    <div>
-                      <dt data-i18n="projects.labels.role"></dt>
-                      <dd data-i18n="projects.uberDose.role"></dd>
-                    </div>
-                    <div>
-                      <dt data-i18n="projects.labels.context"></dt>
-                      <dd data-i18n="projects.uberDose.context"></dd>
-                    </div>
-                    <div>
-                      <dt data-i18n="projects.labels.destination"></dt>
-                      <dd data-i18n="projects.uberDose.destination"></dd>
-                    </div>
-                  </dl>
-
-                  <a class="project-action" href="https://camel-eon.itch.io/uberdose" target="_blank" rel="noreferrer"
-                    data-i18n="projects.uberDose.action" data-i18n-attr="aria-label:projects.uberDose.ariaLabel"></a>
-                </div>
-              </article>
-            </li>
-          </ol>
-
-        </div>
+              </div>
+              <dl class="project-facts"><div><dt data-i18n="projects.labels.role"></dt><dd data-i18n="projects.uberDose.role"></dd></div><div><dt data-i18n="projects.labels.context"></dt><dd data-i18n="projects.uberDose.context"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.uberDose.destination"></dd></div></dl>
+            </article>
+          </li>
+        </ol>
       </section>
 
       <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="about-section__copy">
-          <p class="eyebrow" data-i18n="about.eyebrow"></p>
-          <h2 id="about-title" data-i18n="about.title"></h2>
-          <p data-i18n="about.intro"></p>
-          <a class="text-link" href="mailto:contact@coldwetgames.com" data-i18n="about.contactAction"></a>
-        </div>
-
-        <figure class="portrait">
-          <img src="assets/roman-groiss-portrait.jpg" alt="" loading="lazy" decoding="async"
-            data-i18n-attr="alt:about.portraitAlt" />
-        </figure>
+        <div class="about-section__copy" data-reveal><p class="eyebrow" data-i18n="about.eyebrow"></p><h2 id="about-title" data-i18n="about.title"></h2><p class="about-section__intro" data-i18n="about.intro"></p><a class="button button--ink" href="mailto:contact@coldwetgames.com"><span data-i18n="about.contactAction"></span><span class="arrow" aria-hidden="true"></span></a></div>
+        <figure class="portrait" data-reveal><img src="assets/roman-groiss-portrait.jpg" alt="" width="1600" height="1573" loading="lazy" decoding="async" data-i18n-attr="alt:about.portraitAlt" /><span class="portrait__asterisk asterisk" aria-hidden="true"></span></figure>
+        <div class="studio-note"><img src="assets/cold-and-wet-mountain-clean.png" alt="" width="763" height="596" /><p><strong data-i18n="hero.statusLabel"></strong><span data-i18n="hero.status"></span></p></div>
       </section>
     </main>
 
     <footer class="site-footer" id="contact">
-      <span data-i18n="footer.copyright"></span>
-      <a href="mailto:contact@coldwetgames.com" data-i18n="footer.email"></a>
+      <div class="contact-heading"><p class="eyebrow" data-i18n="navigation.contact"></p><a class="contact-heading__link" href="mailto:contact@coldwetgames.com"><span data-i18n="about.contactAction"></span><span class="arrow" aria-hidden="true"></span></a></div>
+      <a class="contact-email" href="mailto:contact@coldwetgames.com" data-i18n="footer.email"></a>
+      <div class="footer-bottom"><span data-i18n="footer.copyright"></span><a href="#top"><span data-i18n="footer.backToTop"></span><span class="arrow arrow--up" aria-hidden="true"></span></a></div>
     </footer>
   </div>
 </body>
-
 </html>

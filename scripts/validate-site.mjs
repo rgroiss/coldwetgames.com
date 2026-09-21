@@ -9,6 +9,8 @@ const read = (path) => readFileSync(resolve(repositoryRoot, path), "utf8");
 const html = read("index.html");
 const localization = read("localization.js");
 const styles = read("styles.css");
+const gallery = read("gallery.js");
+const scene = read("scene.mjs");
 const steamProject = read("steam-project.js");
 const steamSync = read("scripts/sync-steam-project.mjs");
 const steamStatus = JSON.parse(read("assets/steam/ysiitu.json"));
@@ -72,6 +74,9 @@ if (directText) {
 const localReferences = [
   ...html.matchAll(/(?:href|src)="([^"]+)"/g),
   ...html.matchAll(/data-steam-status="([^"]+)"/g),
+  ...styles.matchAll(/url\("([^"]+)"\)/g),
+  ...gallery.matchAll(/import\('([^']+)'\)/g),
+  ...scene.matchAll(/from '([^']+)'/g),
 ]
   .map(([, reference]) => reference)
   .filter(
@@ -83,7 +88,7 @@ const localReferences = [
   );
 
 localReferences.forEach((reference) => {
-  if (!existsSync(resolve(repositoryRoot, reference))) {
+  if (!existsSync(resolve(repositoryRoot, reference.split(/[?#]/)[0]))) {
     errors.push(`Missing local file referenced by index.html: ${reference}`);
   }
 });
@@ -110,6 +115,8 @@ const replacementArtifacts = /(?:Â|Ã|â€|ï¿½)/;
   ["steam-project.js", steamProject],
   ["scripts/sync-steam-project.mjs", steamSync],
   ["styles.css", styles],
+  ["gallery.js", gallery],
+  ["scene.mjs", scene],
 ].forEach(([path, contents]) => {
   if (replacementArtifacts.test(contents)) {
     errors.push(`Possible text-encoding artifact in ${path}.`);
@@ -127,6 +134,42 @@ if (braceDifference !== 0) {
 if (messageFor("projects.uberDose.title") !== "UBER//DOSE") {
   errors.push("The UBER//DOSE title is not using its exact official spelling.");
 }
+
+// Structural contracts: effects must never become the only route to content.
+for (const id of ["work", "about", "contact"]) {
+  if (!html.includes(`id="${id}"`)) errors.push(`Missing public section anchor: ${id}`);
+}
+for (const key of [
+  "projects.yourSuffering.description", "projects.yourSuffering.steamState",
+  "projects.heavyWake.description", "projects.heavyWake.state",
+  "projects.uberDose.description", "projects.uberDose.role", "projects.uberDose.context",
+  "hero.status", "about.intro", "footer.email",
+]) {
+  if (!textKeys.includes(key)) errors.push(`Required portfolio information is not displayed: ${key}`);
+}
+const projectTitles = [...html.matchAll(/<h3[^>]+data-i18n="([^"]+)"/g)].map(([, key]) => key);
+if (projectTitles.join(",") !== "projects.yourSuffering.title,projects.heavyWake.title,projects.uberDose.title") {
+  errors.push("Game order or accessible project titles have changed.");
+}
+if (!html.includes('aria-pressed="false"') || !attributeKeys.includes("motion.label")) {
+  errors.push("Motion control must expose a localised accessible name and its state.");
+}
+for (const key of ["motion.label", "motion.on", "motion.off", "motion.hint", "hero.drag"]) {
+  if (!localizationKeys.includes(key)) errors.push(`Missing localised interaction label: ${key}`);
+}
+if (!html.includes('<canvas class="art-stage__canvas" aria-hidden="true"')) {
+  errors.push("Decorative canvas must be excluded from the accessibility tree.");
+}
+for (const asset of [
+  "assets/vendor/three/three.core.min.js", "assets/vendor/three/LICENSE",
+  "assets/fonts/BarlowCondensed-OFL.txt", "assets/fonts/SpaceGrotesk-OFL.txt",
+]) {
+  if (!existsSync(resolve(repositoryRoot, asset))) errors.push(`Missing dependency or licence: ${asset}`);
+}
+const wishlistLinks = [...html.matchAll(/href="(https:\/\/store\.steampowered\.com\/app\/5017960\/[^\"]+)"/g)];
+if (wishlistLinks.length < 2 || wishlistLinks.some(([, href]) =>
+  new URL(href).search !== "?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card"
+)) errors.push("The YSIITU wishlist destination or tracking parameters have changed.");
 
 if (
   steamStatus.appId !== 5017960 ||

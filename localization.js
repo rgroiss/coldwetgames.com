@@ -19,6 +19,12 @@
         about: "About",
         contact: "Contact",
       },
+      motion: {
+        label: "Motion",
+        on: "On",
+        off: "Off",
+        hint: "Toggle animations. Reduced-motion preferences are always respected.",
+      },
       hero: {
         eyebrow: "Independent game studio / Austria",
         titleMain: "Cold and Wet",
@@ -27,6 +33,10 @@
         statusLabel: "Work in progress",
         status: "This website and its project archive are still being built.",
         markCaption: "Studio mark / {year}",
+        featured: "In the spotlight",
+        explore: "Explore the games",
+        scroll: "Scroll to explore",
+        drag: "Drag to rotate",
       },
       work: {
         eyebrow: "Selected work",
@@ -98,6 +108,7 @@
       footer: {
         copyright: "\u00A9 {year} Cold and Wet Studios",
         email: "contact@coldwetgames.com",
+        backToTop: "Back to top",
       },
     },
   };
