@@ -67,9 +67,8 @@ ol { list-style: none; padding: 0; margin: 0; }
 .motion-toggle[aria-pressed="false"] .motion-toggle__icon i { height: 3px; }
 .eyebrow { font-size: .67rem; font-weight: 500; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; }
 .status-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 14px #d2ff5a40; }
-.arrow { display: inline-block; flex-shrink: 0; width: 20px; height: 20px; position: relative; transform: rotate(-45deg); }
-.arrow::before { content: ""; position: absolute; width: 100%; height: 1.5px; background: currentColor; top: calc(50% - .75px); left: 0; }
-.arrow::after { content: ""; position: absolute; width: 11px; height: 11px; right: 0; top: 4.5px; border-right: 1.5px solid currentColor; border-top: 1.5px solid currentColor; transform: rotate(45deg); }
+.arrow { display: inline-block; flex-shrink: 0; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; transform: rotate(-45deg); }
+.arrow path { vector-effect: non-scaling-stroke; }
 .arrow--down { transform: rotate(90deg); }
 .arrow--up { transform: rotate(-90deg); }
 .asterisk { display: inline-block; width: 3.25rem; height: 3.25rem; flex: 0 0 3.25rem; background: var(--violet); clip-path: polygon(42% 0,58% 0,58% 30%,80% 8%,92% 20%,70% 42%,100% 42%,100% 58%,70% 58%,92% 80%,80% 92%,58% 70%,58% 100%,42% 100%,42% 70%,20% 92%,8% 80%,30% 58%,0 58%,0 42%,30% 42%,8% 20%,20% 8%,42% 30%); }
@@ -125,7 +124,6 @@ ol { list-style: none; padding: 0; margin: 0; }
 .hero__bottom { grid-column: 1 / -1; display: flex; align-items: center; gap: 1.1rem; color: var(--muted); margin-top: 3rem; padding: 1.3rem 0; font-size: .59rem; letter-spacing: .1em; text-transform: uppercase; }
 .hero__bottom-line { height: 1px; background: var(--line); flex: 1; }
 .hero__bottom .arrow { width: 13px; height: 13px; }
-.hero__bottom .arrow::after { height: 8px; width: 8px; top: 2.5px; }
 
 /* Each game is a separate exhibition, in the original newest-first order. */
 .work-section { padding: 5rem var(--gutter) 6rem; }
@@ -198,9 +196,7 @@ ol { list-style: none; padding: 0; margin: 0; }
 .site-footer { padding: 4.5rem var(--gutter) 0; }
 .contact-heading .eyebrow { color: var(--lime); margin-bottom: 1rem; }
 .contact-heading__link { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--display); font-size: clamp(4.5rem, 11vw, 12rem); font-weight: 800; text-transform: uppercase; line-height: 1; }
-.contact-heading__link > .arrow { width: clamp(3rem, 7vw, 7rem); height: clamp(3rem, 7vw, 7rem); transition: transform .35s var(--ease); }
-.contact-heading__link > .arrow::before { height: 3px; top: calc(50% - 1.5px); }
-.contact-heading__link > .arrow::after { width: 55%; height: 55%; top: 22.5%; border-width: 3px; }
+.contact-heading__link > .arrow { width: clamp(3rem, 7vw, 7rem); height: clamp(3rem, 7vw, 7rem); stroke-width: 3; transition: transform .35s var(--ease); }
 .contact-heading__link:hover { color: var(--violet); }
 .contact-heading__link:hover .arrow { transform: rotate(0deg); }
 .contact-email { display: inline-block; font-size: clamp(1rem, 2.4vw, 2.5rem); margin-top: 1.7rem; border-bottom: 1px solid #ffffff50; overflow-wrap: anywhere; }
@@ -209,7 +205,6 @@ ol { list-style: none; padding: 0; margin: 0; }
 .footer-bottom a { display: flex; align-items: center; gap: 1rem; }
 .footer-bottom a:hover { color: var(--paper); }
 .footer-bottom .arrow { width: 15px; height: 15px; }
-.footer-bottom .arrow::after { top: 3.5px; width: 8px; height: 8px; }
 
 @media (min-width: 1600px) {
   .hero { padding-top: 4rem; }
