@@ -28,15 +28,15 @@
     animationContext = gsap.context(() => {
       // Elements are visible in CSS; only a working animation engine adds transforms.
       gsap.from('.hero__title', {
-        y: 24, duration: 1.05,
+        y: 12, duration: .65,
         ease: 'power3.out', clearProps: 'transform',
       });
       gsap.from('.hero__intro, .hero__explore, .hero__exhibit', {
-        y: 22, duration: .9, stagger: .1, ease: 'power3.out', clearProps: 'transform',
+        y: 12, duration: .65, ease: 'power3.out', clearProps: 'transform',
       });
       document.querySelectorAll('[data-reveal]').forEach((element) => {
         gsap.from(element, {
-          y: 42, duration: .85, ease: 'power3.out', clearProps: 'transform',
+          y: 16, duration: .55, ease: 'power3.out', clearProps: 'transform',
           scrollTrigger: { trigger: element, start: 'top 94%', once: true },
         });
       });
@@ -64,7 +64,7 @@
 
     sceneLoading = true;
     try {
-      const { createExhibit } = await import('./scene.mjs?v=textures-2');
+      const { createExhibit } = await import('./scene.mjs?v=art-direction-1');
       if (currentGeneration !== generation) return;
       const nextExhibit = await createExhibit(stage);
       if (currentGeneration !== generation) {

@@ -29,6 +29,12 @@ All runtime assets are served locally. No external template, component demo, sto
 
 The older design-research documents remain historical research, not the current implementation specification.
 
+## Paperwork icon, 2026-09-22
+
+- **Files icon:** [Lucide Files](https://lucide.dev/icons/files), downloaded from the [official SVG source](https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/files.svg). Stored unchanged at `assets/icons/lucide/files.svg` (SHA-256 `97adf06fc0511e7a40be93ecda04466ed196718ab4a5e3a62b1148cc49697775`). CSS uses the SVG as a violet mask; no paths are drawn or modified locally.
+- **Licence:** ISC, copyright 2026 Lucide Icons and Contributors. The complete upstream [LICENSE](https://github.com/lucide-icons/lucide/blob/main/LICENSE) is retained at `assets/icons/lucide/LICENSE`.
+- Replaces the handmade paperclip next to the hero introduction. The icon is decorative and hidden from assistive technology; existing localised copy and spacing are preserved. No runtime CDN or icon-library script is added.
+
 ## Texture pass, 2026-09-21
 
 - **YSIITU lava:** `lava.mjs` ports the studio's own `Assets/_Hellgame/Art/Shaders/HellLavaBackground.hlsl` from the local Your Suffering Is Important To Us Unity project. The inspected source was at project commit `c1ec59cd`; the menu material supplies scale 3.2, speed 0.0247, warp 0.56 and softness 0.46. The website preserves the diagonal flow, five coupled folds and 28.6-second orange/red/purple cycle, with a brighter palette and stronger embers for the gallery. No Balatro game assets or third-party shader package were downloaded. The Unity project was read only.

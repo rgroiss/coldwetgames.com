@@ -9,11 +9,11 @@
   <link rel="icon" href="assets/cold-and-wet-mountain-clean.png" type="image/png" />
   <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=arrows-1" />
+  <link rel="stylesheet" href="styles.css?v=art-direction-2" />
   <script src="localization.js?v=gallery-1" defer></script>
   <script src="assets/vendor/gsap/gsap.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
-  <script src="gallery.js?v=textures-2" defer></script>
+  <script src="gallery.js?v=art-direction-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#work" data-i18n="accessibility.skipToWork"></a>
@@ -29,7 +29,7 @@
         <a href="#contact" data-i18n="navigation.contact"></a>
       </nav>
       <button class="motion-toggle" type="button" aria-pressed="false" data-i18n-attr="aria-label:motion.label,title:motion.hint" hidden>
-        <span class="motion-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="motion-toggle__icon" aria-hidden="true"><i></i><i></i></span>
         <span data-i18n="motion.label"></span>
         <span data-motion-on data-i18n="motion.on" hidden></span>
         <span data-motion-off data-i18n="motion.off"></span>
@@ -39,16 +39,15 @@
     <main>
       <section class="hero" aria-labelledby="studio-name">
         <div class="hero__copy">
-          <p class="eyebrow hero__eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow"></span></p>
+          <p class="eyebrow hero__eyebrow"><span data-i18n="hero.eyebrow"></span></p>
           <h1 id="studio-name" class="hero__title"><span data-i18n="hero.titleMain"></span> <span class="hero__title-accent" data-i18n="hero.titleAccent"></span></h1>
-          <div class="hero__intro"><span class="asterisk" aria-hidden="true"></span><p data-i18n="hero.intro"></p></div>
+          <div class="hero__intro"><span class="hero__paperwork" aria-hidden="true"></span><p data-i18n="hero.intro"></p></div>
           <a class="hero__explore" href="#work"><span data-i18n="hero.explore"></span><svg class="arrow arrow--down" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
         </div>
         <div class="hero__exhibit">
           <div class="exhibit-label"><span data-i18n="hero.featured"></span><span data-i18n="projects.yourSuffering.number"></span></div>
           <div class="art-stage" data-art-stage>
             <div class="lava-field lava-field--hero" data-lava-field aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
-            <div class="art-stage__orbit" aria-hidden="true"></div>
             <div class="art-stage__fallback"><div class="art-stage__frame"><img src="assets/projects/ysiitu-steam-header-a04dc0e0.jpg" alt="" width="460" height="215" fetchpriority="high" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></div></div>
             <canvas class="art-stage__canvas" aria-hidden="true"></canvas>
             <span class="art-stage__hint" data-drag-hint data-i18n="hero.drag" hidden></span>
@@ -117,7 +116,7 @@
 
       <section class="about-section" id="about" aria-labelledby="about-title">
         <div class="about-section__copy" data-reveal><p class="eyebrow" data-i18n="about.eyebrow"></p><h2 id="about-title" data-i18n="about.title"></h2><p class="about-section__intro" data-i18n="about.intro"></p><a class="button button--ink" href="mailto:contact@coldwetgames.com"><span data-i18n="about.contactAction"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a></div>
-        <figure class="portrait" data-reveal><img src="assets/roman-groiss-portrait.jpg" alt="" width="1600" height="1573" loading="lazy" decoding="async" data-i18n-attr="alt:about.portraitAlt" /><span class="portrait__asterisk asterisk" aria-hidden="true"></span></figure>
+        <figure class="portrait" data-reveal><img src="assets/roman-groiss-portrait.jpg" alt="" width="1600" height="1573" loading="lazy" decoding="async" data-i18n-attr="alt:about.portraitAlt" /></figure>
         <div class="studio-note"><img src="assets/cold-and-wet-mountain-clean.png" alt="" width="763" height="596" /><p><strong data-i18n="hero.statusLabel"></strong><span data-i18n="hero.status"></span></p></div>
       </section>
     </main>

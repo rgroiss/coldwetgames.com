@@ -24,18 +24,19 @@ The studio name remains a single accessible heading. Text embedded in original g
 
 ## Texture and material
 
-- The YSIITU exhibit floats above an irregular lava field instead of a smooth violet sphere. The larger project panel uses the same effect across its background, with a dark red veil beneath the copy. The old flat red circle is removed.
+- The YSIITU exhibit sits over a rectangular lava field that echoes its equipment frame. The larger project panel uses the same effect across its background, with a dark red veil beneath the copy.
 - Port the game's own five-fold lava algorithm; preserve its slow internal evolution and orange/red/violet ember cycle. Website colours are brighter than the gameplay background. Do not replace it with unrelated stock lava imagery.
-- Fine deterministic grain gives the charcoal and violet panels a print finish. Etched wave lines connect the hero and UBER//DOSE; subtle scan lines belong only to the neon section. The about panel uses fine contour rings behind the portrait.
-- Keep textures behind text, never over official artwork. Green controls and asterisks use a fine printed hatch. Texture contrast must stay subordinate to reading and focus indicators.
+- Fine deterministic grain gives the charcoal and violet panels a print finish. Subtle scan lines belong only to the neon section; generic contour waves and rings are omitted.
+- Keep textures behind text, never over official artwork. Colored controls retain print grain without diagonal hatching. Texture contrast must stay subordinate to reading and focus indicators.
+- Decoration is restrained: Lucide's Files icon beside the introduction and an outlined Steam stamp reference office paperwork. Use the original third-party SVG, tinted violet with CSS; its ISC licence is retained locally. No starbursts, orbit rings, glowing status dots or floating stickers. Project metadata is plain text; the motion control has square corners consistent with the other controls.
 - All texture files are local, with a reproducible standard-library Node generator. No runtime SVG filters, texture libraries or new external assets are required.
 
 ## Motion
 
-- GSAP handles a short opening movement and one-time section entrances. Elements remain visible in base CSS.
+- GSAP handles a short, unstaggered opening movement and restrained one-time section entrances. Elements remain visible in base CSS. Hover feedback uses color, borders or brightness without lifting controls or zooming artwork.
 - Heavy Wake's background has a bounded scroll-linked depth effect on fine-pointer desktops.
 - Native scrolling and normal anchors remain intact.
-- Three.js renders one framed artwork panel with reflective edges, small hardware details, a slow float and pointer-responsive lighting.
+- Three.js renders one framed artwork panel with reflective edges, small hardware details and pointer-responsive lighting and tilt. The panel does not bob or wobble on its own.
 - Mouse drag rotates the panel within a bounded range. The canvas is decorative and not a keyboard destination. All meaningful actions remain adjacent HTML links.
 - The localised motion toggle pauses GSAP effects, rendering, hover transitions and smooth scrolling. The preference survives reloads when localStorage is available.
 - Reduced-motion preferences override the saved setting and disable the toggle. No scene is loaded in this state.

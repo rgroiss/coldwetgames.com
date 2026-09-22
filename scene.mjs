@@ -71,7 +71,6 @@ export async function createExhibit(stage) {
   let lost = false;
   let frame = 0;
   let lastTime = 0;
-  let elapsed = 0;
   let dragging = false;
   let startX = 0;
   let startY = 0;
@@ -95,12 +94,9 @@ export async function createExhibit(stage) {
     if (!enabled || !visible || document.hidden || disposed || lost) return;
     const delta = lastTime ? Math.min((time - lastTime) / 1000, .05) : 0;
     lastTime = time;
-    elapsed += delta;
     const ease = 1 - Math.exp(-7 * delta);
     display.rotation.x += (.045 + dragY + pointerY * .09 - display.rotation.x) * ease;
     display.rotation.y += (-.18 + dragX + pointerX * .13 - display.rotation.y) * ease;
-    display.rotation.z = -.09 + Math.sin(elapsed * .45) * .017;
-    display.position.y = Math.sin(elapsed * .85) * .08;
     pointerLight.position.x = 2 + pointerX * 3;
     pointerLight.position.y = 1 - pointerY * 2;
     draw();

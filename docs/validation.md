@@ -49,3 +49,11 @@ Reviewed locally on `codex/textured-gallery`; the studio owner approved this tex
 - Screenshots and the scenario results are in ignored `.preview/textures-desktop.png`, `.preview/textures-mobile.png`, `.preview/textures-ysiitu.png` and `.preview/texture-qa-results.json`.
 
 No Unity files, unrelated `README.txt`, external storefront URLs, factual copy, deployment settings or dependency versions were changed.
+
+## Decorative cleanup — 2026-09-22
+
+- Preserved typography, palette, layout, section spacing, official artwork, content and destinations. Removed starbursts, orbit/contour decoration, the irregular lava silhouette, badge outlines and unnecessary glow/hover movement. The introduction uses Lucide's original Files icon, with its ISC licence retained locally, and the Steam accent uses an outlined paperwork stamp.
+- Site validation passes: 67 localised keys, 31 local references and 74 HTML classes. Syntax checks for `gallery.js` and `scene.mjs`, and `git diff --check`, pass. No visible strings were added or changed.
+- Compared section heights before and after with motion off at 320, 390, 768, 1280 and 1440 CSS pixels: no section-height changes, horizontal overflow or empty localisation bindings. Visually reviewed the hero, YSIITU feature and portrait at desktop and 390px mobile widths. All content images loaded after scrolling into view.
+- Verified work/about/home anchors, keyboard activation of the motion control and persistence across reload. The desktop exhibit and both lava fields initialise successfully with motion on; browser logs contain no warnings or errors.
+- Reviewed locally at `http://127.0.0.1:8000`; the studio owner approved publication of the cleanup and replacement icon on 2026-09-22.
