@@ -179,7 +179,7 @@ ol { list-style: none; padding: 0; margin: 0; }
 .about-section__copy h2 { font-family: var(--display); font-size: clamp(5rem, 10vw, 11rem); font-weight: 800; line-height: .86; text-transform: uppercase; max-width: 38rem; margin: 1.7rem 0; }
 .about-section__intro { max-width: 21rem; font-size: 1rem; line-height: 1.7; }
 .about-section__copy .button { margin-top: 2rem; }
-.portrait { position: relative; align-self: center; margin: 0 1rem; transform: rotate(5deg); background: #918d99; }
+.portrait { position: relative; align-self: center; margin: 0 1rem; transform: rotate(5deg); background: #918d99; mask: url("assets/textures/portrait-torn-edge.svg") center / 100% 100% no-repeat; }
 .portrait > img { width: 100%; aspect-ratio: 4/4.4; height: auto; object-fit: cover; object-position: center; filter: grayscale(1); }
 .studio-note { grid-column: 1/-1; display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid #24163140; padding-top: 1.75rem; margin-top: 1rem; }
 .studio-note img { width: 4rem; }
