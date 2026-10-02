@@ -1,3 +1,15 @@
+# Personal portfolio wording review — 2026-10-02
+
+- Reframed the existing single page around Roman Groiss, game developer. Preserved section layout, project order, original artwork, typography, colours and motion.
+- Audited navigation, hero, project entries, biography, contact, footer, accessible names, image alternatives and metadata. The only visible Cold and Wet Studios reference is historical context in the biography. No sales, wishlist or freelance-service invitations remain in the rendered copy.
+- Featured action opens the local YSIITU portfolio entry. Steam and itch.io references use secondary text links; wishlist campaign parameters were removed.
+- Retained existing release information and the documented UBER//DOSE main-developer role. Unity for YSIITU is supported by the existing shader provenance in `external-sources.md`. No specific team sizes or additional responsibilities were invented.
+- Title, description, OpenGraph and Twitter metadata are statically synchronised from localisation for crawlers. Run `node scripts/sync-metadata.mjs` after metadata edits.
+- Site validation, JavaScript syntax checks and whitespace checks passed. Browser checks at 320, 390, 768, 1280 and 1440 CSS pixels found no horizontal overflow or empty localisation text. All eight images loaded; browser error logs were empty. Inspected desktop hero, narrow mobile hero, project copy and biography; verified the featured project anchor.
+- Local screenshot: `.preview/portfolio-desktop.png`. Changes are local; no deployment performed. No Impressum/legal notice or privacy policy was added, removed or edited.
+
+The following entries document earlier designs and their checks.
+
 # Local redesign review — 2026-09-21
 
 ## Automated checks

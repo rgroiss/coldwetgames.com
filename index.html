@@ -4,13 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#111113" />
-  <meta name="description" content="" />
-  <title></title>
+  <meta name="description" content="Personal portfolio of Roman Groiss, a game developer from Austria. Selected games, student projects and development work." data-i18n-attr="content:meta.description" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Roman Groiss – Game Developer Portfolio" data-i18n-attr="content:meta.title" />
+  <meta property="og:description" content="Personal portfolio of Roman Groiss, a game developer from Austria. Selected games, student projects and development work." data-i18n-attr="content:meta.description" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Roman Groiss – Game Developer Portfolio" data-i18n-attr="content:meta.title" />
+  <meta name="twitter:description" content="Personal portfolio of Roman Groiss, a game developer from Austria. Selected games, student projects and development work." data-i18n-attr="content:meta.description" />
+  <title data-i18n="meta.title">Roman Groiss – Game Developer Portfolio</title>
   <link rel="icon" href="assets/cold-and-wet-mountain-clean.png" type="image/png" />
   <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=portrait-edge-1" />
-  <script src="localization.js?v=gallery-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=portfolio-1" />
+  <script src="localization.js?v=portfolio-1" defer></script>
   <script src="assets/vendor/gsap/gsap.min.js" defer></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
   <script src="gallery.js?v=art-direction-1" defer></script>
@@ -37,10 +43,10 @@
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="studio-name">
+      <section class="hero" aria-labelledby="portfolio-name">
         <div class="hero__copy">
           <p class="eyebrow hero__eyebrow"><span data-i18n="hero.eyebrow"></span></p>
-          <h1 id="studio-name" class="hero__title"><span data-i18n="hero.titleMain"></span> <span class="hero__title-accent" data-i18n="hero.titleAccent"></span></h1>
+          <h1 id="portfolio-name" class="hero__title"><span data-i18n="hero.titleMain"></span> <span class="hero__title-accent" data-i18n="hero.titleAccent"></span></h1>
           <div class="hero__intro"><span class="hero__paperwork" aria-hidden="true"></span><p data-i18n="hero.intro"></p></div>
           <a class="hero__explore" href="#work"><span data-i18n="hero.explore"></span><svg class="arrow arrow--down" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
         </div>
@@ -54,7 +60,7 @@
           </div>
           <div class="hero__project">
             <div><p class="eyebrow" data-i18n="projects.yourSuffering.steamState"></p><p class="hero__project-title" data-i18n="projects.yourSuffering.title"></p></div>
-            <a class="button button--lime" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><span data-i18n="projects.yourSuffering.steamAction"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
+            <a class="button button--lime" href="#project-ysiitu" data-i18n-attr="aria-label:hero.projectAriaLabel"><span data-i18n="hero.projectAction"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
           </div>
         </div>
         <div class="hero__bottom"><span data-i18n="hero.markCaption"></span><span class="hero__bottom-line" aria-hidden="true"></span><span data-i18n="hero.scroll"></span><svg class="arrow arrow--down" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></div>
@@ -64,22 +70,22 @@
         <header class="work-heading" data-reveal><div><p class="eyebrow" data-i18n="work.eyebrow"></p><h2 id="work-title" data-i18n="work.title"></h2></div><p data-i18n="work.intro"></p></header>
         <ol class="project-list">
           <li>
-            <article class="project project--hell" aria-labelledby="project-title-ysiitu">
+            <article id="project-ysiitu" class="project project--hell" aria-labelledby="project-title-ysiitu">
               <div class="lava-field lava-field--project" data-lava-field aria-hidden="true"><canvas aria-hidden="true"></canvas></div>
               <div class="project__topline"><span class="project__number" data-i18n="projects.yourSuffering.number"></span><span data-i18n="projects.yourSuffering.kicker"></span><span class="project__badge" data-i18n="projects.yourSuffering.steamState"></span></div>
               <div class="hell-layout">
                 <div class="project__copy" data-reveal>
                   <h3 id="project-title-ysiitu" data-i18n="projects.yourSuffering.title"></h3>
                   <p class="project__description" data-i18n="projects.yourSuffering.description"></p>
-                  <a class="button button--paper" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><span data-i18n="projects.yourSuffering.steamAction"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
+                  <a class="project-reference" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><span data-i18n="projects.yourSuffering.steamAction"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
                 </div>
                 <div class="hell-art" data-reveal>
                   <div class="hell-art__type" aria-hidden="true" data-i18n="projects.yourSuffering.capsuleTitle"></div>
-                  <a class="art-link hell-art__image" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><img src="assets/projects/ysiitu-steam-header-a04dc0e0.jpg" alt="" width="460" height="215" loading="lazy" decoding="async" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></a>
-                  <span class="hell-art__stamp" data-i18n="projects.yourSuffering.destination"></span>
+                  <a class="art-link hell-art__image" href="https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.yourSuffering.steamAriaLabel"><img src="assets/projects/ysiitu-steam-header-a04dc0e0.jpg" alt="" width="460" height="215" loading="lazy" decoding="async" data-i18n-attr="alt:projects.yourSuffering.steamArtAlt" /></a>
+                  <span class="hell-art__stamp" data-i18n="projects.yourSuffering.mediaState"></span>
                 </div>
               </div>
-              <dl class="project-facts"><div><dt data-i18n="projects.labels.state"></dt><dd data-i18n="projects.yourSuffering.steamState"></dd></div><div><dt data-i18n="projects.labels.context"></dt><dd data-i18n="projects.yourSuffering.context"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.yourSuffering.destination"></dd></div></dl>
+              <dl class="project-facts"><div><dt data-i18n="projects.labels.state"></dt><dd data-i18n="projects.yourSuffering.steamState"></dd></div><div><dt data-i18n="projects.labels.context"></dt><dd data-i18n="projects.yourSuffering.context"></dd></div><div><dt data-i18n="projects.labels.technology"></dt><dd data-i18n="projects.yourSuffering.technology"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.yourSuffering.destination"></dd></div></dl>
             </article>
           </li>
           <li>
@@ -93,7 +99,7 @@
               <div class="wake-details" data-reveal>
                 <p class="project__description" data-i18n="projects.heavyWake.description"></p>
                 <dl class="project-facts"><div><dt data-i18n="projects.labels.state"></dt><dd data-i18n="projects.heavyWake.state"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.heavyWake.destination"></dd></div></dl>
-                <a class="button button--violet" href="https://store.steampowered.com/app/4235660/Heavy_Wake/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"><span data-i18n="projects.heavyWake.action"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
+                <a class="project-reference" href="https://store.steampowered.com/app/4235660/Heavy_Wake/" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.heavyWake.ariaLabel"><span data-i18n="projects.heavyWake.action"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
               </div>
             </article>
           </li>
@@ -105,7 +111,7 @@
                 <div class="project__copy" data-reveal>
                   <h3 id="project-title-uberdose" data-i18n="projects.uberDose.title"></h3>
                   <p class="project__description" data-i18n="projects.uberDose.description"></p>
-                  <a class="button button--outline" href="https://camel-eon.itch.io/uberdose" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.uberDose.ariaLabel"><span data-i18n="projects.uberDose.action"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
+                  <a class="project-reference" href="https://camel-eon.itch.io/uberdose" target="_blank" rel="noreferrer" data-i18n-attr="aria-label:projects.uberDose.ariaLabel"><span data-i18n="projects.uberDose.action"></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12H20M12 4L20 12L12 20" /></svg></a>
                 </div>
               </div>
               <dl class="project-facts"><div><dt data-i18n="projects.labels.role"></dt><dd data-i18n="projects.uberDose.role"></dd></div><div><dt data-i18n="projects.labels.context"></dt><dd data-i18n="projects.uberDose.context"></dd></div><div><dt data-i18n="projects.labels.destination"></dt><dd data-i18n="projects.uberDose.destination"></dd></div></dl>

@@ -80,8 +80,12 @@ ol { list-style: none; padding: 0; margin: 0; }
 .button--outline:hover { background: var(--lime); color: var(--ink); }
 .button--ink { color: var(--paper); background: var(--ink); }
 .button--lime, .button--violet { background-image: url("assets/textures/print-grain.png"); }
+.project-reference { display: inline-flex; align-items: center; gap: .65rem; width: fit-content; min-height: 2.75rem; font-size: .76rem; text-decoration: underline; text-underline-offset: .25em; }
+.project-reference .arrow { width: 16px; height: 16px; }
+.project-reference:hover { color: var(--lime); }
+.project__copy .project-reference { margin-top: 1.8rem; }
 
-/* A two-part opening: studio typography and the newest game's physical exhibit. */
+/* A two-part opening: developer identity and the newest project's physical exhibit. */
 .hero { position: relative; display: grid; grid-template-columns: 1.08fr 1fr; column-gap: 2rem; padding: 3rem var(--gutter) 0; isolation: isolate; }
 .hero__copy { padding-top: .65rem; min-width: 0; }
 .hero__eyebrow { display: flex; align-items: center; gap: .7rem; color: #c3c0c9; }
@@ -216,7 +220,7 @@ ol { list-style: none; padding: 0; margin: 0; }
   .project__copy h3 { font-size: 5.8vw; }
   .hell-art { min-height: 280px; padding-inline: 0; }
   .wake-details { grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
-  .wake-details .button { grid-column: 2; }
+  .wake-details .project-reference { grid-column: 2; }
   .wake-details .project__description { grid-row: span 2; }
   .dose-layout { gap: 2.5rem; }
   .dose-layout h3 { font-size: 5.5vw; }
@@ -270,7 +274,7 @@ ol { list-style: none; padding: 0; margin: 0; }
   .wake-art__capsule { width: 40%; right: 1.5rem; bottom: 2rem; }
   .wake-details { padding: 1rem 1.5rem 2rem; grid-template-columns: 1fr; }
   .wake-details .project__description { grid-row: auto; }
-  .wake-details .button { grid-column: 1; }
+  .wake-details .project-reference { grid-column: 1; }
   .dose-layout { grid-template-columns: 1fr; padding: 2.25rem 1.5rem; gap: 2.5rem; }
   .dose-layout h3 { font-size: clamp(3rem, 12vw, 5.5rem); }
   .dose-art { margin: .25rem; }

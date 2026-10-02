@@ -1,6 +1,6 @@
-# Cold and Wet Studios website
+# Roman Groiss portfolio
 
-A static game gallery for [coldwetgames.com](https://coldwetgames.com), hosted with GitHub Pages. The redesign uses local fonts, Three.js for a decorative desktop exhibit, and GSAP/ScrollTrigger for optional motion. No build step, backend, or CDN connection is needed at runtime.
+A personal game-development portfolio for [coldwetgames.com](https://coldwetgames.com), hosted with GitHub Pages. The redesign uses local fonts, Three.js for a decorative desktop exhibit, and GSAP/ScrollTrigger for optional motion. No build step, backend, or CDN connection is needed at runtime.
 
 ## Local preview
 
@@ -26,15 +26,15 @@ node --check scripts/preview.mjs
 git diff --check
 ~~~
 
-Validation covers localisation bindings, unlocalised HTML text, HTML/CSS/module asset references, dependency and font licence files, project order, public section anchors, required portfolio information, wishlist tracking, motion-control semantics, and encoding.
+Validation covers localisation bindings, unlocalised HTML text, HTML/CSS/module asset references, dependency and font licence files, project order, public section anchors, required portfolio information, neutral project references and static metadata, motion-control semantics, and encoding.
 
 Browser checks should cover 320px, 390px, 768px, 1280px and 1440px layouts; keyboard focus and anchor links; reduced motion; the persistent motion toggle; absent graphics/animation libraries; and WebGL context loss. Confirm that artwork and project descriptions remain available in every fallback.
 
 ## Content and localisation
 
-All visible copy, metadata, image alternatives and control labels live in `localization.js`. Bind text using `data-i18n` and attributes using `data-i18n-attr`. English is currently the only dictionary; unknown document languages fall back to English. Keep information in the DOM, outside the decorative canvas.
+All visible copy, metadata, image alternatives and control labels live in `localization.js`. Bind text using `data-i18n` and attributes using `data-i18n-attr`. English is currently the only dictionary; unknown document languages fall back to English. Keep information in the DOM, outside the decorative canvas. After editing `meta.title` or `meta.description`, run `node scripts/sync-metadata.mjs` and commit the updated HTML. This keeps the static title, description, OpenGraph and Twitter metadata available to crawlers and link previews using the same localisation source.
 
-YSIITU's official artwork, coming-soon status and tracked wishlist links are static. The older Steam-publication scripts and status JSON remain in the repository for historical compatibility; the page does not load or poll them.
+YSIITU's artwork, development status and informational Steam links are static. The featured hero action links to its portfolio entry; external project references have no campaign tracking. The older Steam-publication scripts and status JSON remain in the repository for historical compatibility; the page does not load or poll them.
 
 ## Motion and rendering
 

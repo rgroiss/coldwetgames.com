@@ -63,6 +63,7 @@ localizationKeys.forEach((key) => {
 });
 
 const directText = html
+  .replace(/<title data-i18n="meta.title">[^<]*<\/title>/, "")
   .replace(/<!--[\s\S]*?-->/g, "")
   .replace(/<[^>]+>/g, " ")
   .replace(/\s+/g, " ")
@@ -177,10 +178,19 @@ for (const asset of [
 ]) {
   if (!existsSync(resolve(repositoryRoot, asset))) errors.push(`Missing dependency or licence: ${asset}`);
 }
-const wishlistLinks = [...html.matchAll(/href="(https:\/\/store\.steampowered\.com\/app\/5017960\/[^\"]+)"/g)];
-if (wishlistLinks.length < 2 || wishlistLinks.some(([, href]) =>
-  new URL(href).search !== "?utm_source=coldwetgames&utm_medium=website&utm_campaign=ysiitu_wishlist&utm_content=project_card"
-)) errors.push("The YSIITU wishlist destination or tracking parameters have changed.");
+const projectLinks = [...html.matchAll(/href="(https:\/\/store\.steampowered\.com\/app\/5017960\/[^\"]+)"/g)];
+if (projectLinks.length < 2 || projectLinks.some(([, href]) =>
+  href !== "https://store.steampowered.com/app/5017960/Your_Suffering_Is_Important_to_Us/"
+)) errors.push("YSIITU references must retain the project URL without campaign tracking.");
+
+const escapeMetadata = (value) => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+if (!html.includes(`<title data-i18n="meta.title">${escapeMetadata(messageFor("meta.title"))}</title>`)) {
+  errors.push("Static page title is out of sync; run node scripts/sync-metadata.mjs.");
+}
+const metadata = [...html.matchAll(/<meta\b[^>]+data-i18n-attr="content:meta\.(title|description)"[^>]*>/g)];
+if (metadata.length !== 5 || metadata.some(([tag, key]) => !tag.includes(`content="${escapeMetadata(messageFor(`meta.${key}`))}"`))) {
+  errors.push("Static description/social metadata is out of sync; run node scripts/sync-metadata.mjs.");
+}
 
 if (
   steamStatus.appId !== 5017960 ||

@@ -2,7 +2,7 @@
 
 ## Intent
 
-An expressive studio portfolio with Your Suffering Is Important to Us in the spotlight. Preserve every existing project fact, ordering, storefront destination, tracking parameter, biography detail and contact address. The 2026 experimental-gallery brief supersedes the earlier Wet Index and compact-catalogue visual restrictions.
+An expressive personal portfolio for Roman Groiss, with Your Suffering Is Important to Us as the featured project. Preserve project facts, ordering, artwork and contact details. The October 2026 portfolio copy brief replaces studio positioning and sales calls to action; external project pages are secondary informational references without campaign tracking. The 2026 experimental-gallery brief supersedes the earlier Wet Index and compact-catalogue visual restrictions.
 
 ## Identity and typography
 
@@ -15,12 +15,12 @@ An expressive studio portfolio with Your Suffering Is Important to Us in the spo
 ## Page composition
 
 1. Compact navigation and a persistent motion preference control.
-2. Oversized studio typography, existing introduction, and a YSIITU exhibit. The wishlist action appears in the first desktop viewport.
+2. Oversized developer name, a personal portfolio introduction, and a YSIITU exhibit. The featured action opens the project entry on this page.
 3. Newest-first game gallery: flowing red/ember YSIITU feature, violet Heavy Wake forest illustration, and dark neon UBER//DOSE composition. Artwork remains paired with each game's description, facts and action.
 4. Violet about section with the original photograph and existing biography. The site-in-progress notice is retained here.
 5. Large contact link, email and copyright.
 
-The studio name remains a single accessible heading. Text embedded in original game artwork is not used as a substitute for HTML project titles.
+The developer name remains a single accessible heading. Cold and Wet Studios is mentioned only as a historical release label in the biography. Text embedded in original game artwork is not used as a substitute for HTML project titles.
 
 ## Texture and material
 
@@ -29,7 +29,7 @@ The studio name remains a single accessible heading. Text embedded in original g
 - Fine deterministic grain gives the charcoal and violet panels a print finish. Subtle scan lines belong only to the neon section; generic contour waves and rings are omitted.
 - The portrait has a shallow torn-paper silhouette on all four edges. A static SVG mask clips the photograph and its backing together, preserving the original image, crop, tilt and layout. Regenerate the mask with `node scripts/generate-portrait-mask.mjs`; it adds no border, shadow, animation or runtime filter.
 - Keep textures behind text, never over official artwork. Colored controls retain print grain without diagonal hatching. Texture contrast must stay subordinate to reading and focus indicators.
-- Decoration is restrained: Lucide's Files icon beside the introduction and an outlined Steam stamp reference office paperwork. Use the original third-party SVG, tinted violet with CSS; its ISC licence is retained locally. No starbursts, orbit rings, glowing status dots or floating stickers. Project metadata is plain text; the motion control has square corners consistent with the other controls.
+- Decoration is restrained: Lucide's Files icon beside the introduction and an outlined development-status stamp reference office paperwork. Use the original third-party SVG, tinted violet with CSS; its ISC licence is retained locally. No starbursts, orbit rings, glowing status dots or floating stickers. Project metadata is plain text; the motion control has square corners consistent with the other controls.
 - All texture files are local, with a reproducible standard-library Node generator. No runtime SVG filters, texture libraries or new external assets are required.
 
 ## Motion
