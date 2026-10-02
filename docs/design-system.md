@@ -24,7 +24,7 @@ The developer name remains a single accessible heading. Cold and Wet Studios is 
 
 ## Texture and material
 
-- The YSIITU exhibit sits over a rectangular lava field that echoes its equipment frame. The larger project panel uses the same effect across its background, with a dark red veil beneath the copy.
+- The YSIITU exhibit sits over the original rounded, asymmetric lava field, tilted nine degrees with a subtle border and glow. The larger project panel uses the same effect across its background, with a dark red veil beneath the copy.
 - Port the game's own five-fold lava algorithm; preserve its slow internal evolution and orange/red/violet ember cycle. Website colours are brighter than the gameplay background. Do not replace it with unrelated stock lava imagery.
 - Fine deterministic grain gives the charcoal and violet panels a print finish. Subtle scan lines belong only to the neon section; generic contour waves and rings are omitted.
 - The portrait has a shallow torn-paper silhouette on all four edges. A static SVG mask clips the photograph and its backing together, preserving the original image, crop, tilt and layout. Regenerate the mask with `node scripts/generate-portrait-mask.mjs`; it adds no border, shadow, animation or runtime filter.

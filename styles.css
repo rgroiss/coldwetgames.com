@@ -104,7 +104,7 @@ ol { list-style: none; padding: 0; margin: 0; }
 .lava-field canvas { display: block; width: 100%; height: 100%; opacity: 0; }
 .lava-field[data-lava="ready"] canvas { opacity: 1; }
 .lava-field::after { content: ""; position: absolute; inset: 0; background: url("assets/textures/print-grain.png"); box-shadow: inset 0 0 70px #15071355; }
-.lava-field--hero { inset: 10% 3% 12%; }
+.lava-field--hero { inset: 4% 3% 3%; border-radius: 43% 57% 39% 61% / 56% 40% 60% 44%; transform: rotate(-9deg); border: 1px solid #cf7d7340; box-shadow: 0 0 65px #a52a3020; }
 .art-stage__fallback { position: absolute; inset: 0; display: grid; place-items: center; perspective: 900px; }
 .art-stage__frame { width: 83%; max-width: 460px; padding: 12px; border: 1px solid #ad99ca; background: #261e2d; box-shadow: 8px 12px 0 #33223f, 9px 13px 0 #876996; transform: rotate(-7deg) rotateY(-13deg); }
 .art-stage__frame img { width: 100%; aspect-ratio: 460 / 215; object-fit: contain; }
